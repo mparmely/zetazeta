@@ -699,7 +699,7 @@ function renderHome(el) {
     tile('', 'Most titles', tTitles.v ?? '', names(tTitles.ms), tTitles.ms.length > 1 ? 'Tied' : (tTitles.ms[0] ? tTitles.ms[0].titleYears.join(', ') : '')),
     tile('', 'Best win %', fmtPctVal(tPct.v), names(tPct.ms), 'Regular season'),
     tile('', 'Most points all-time', fmtPts(tPf.v), names(tPf.ms), 'Playoffs included'),
-    tile('belt', 'Belt holder', b ? `${b.defenses} ${b.defenses === 1 ? 'defense' : 'defenses'}` : 'Vacant', b ? esc(b.holder) : 'Nobody yet', b ? `Since ${beltStart(b)}` : ''),
+    tile('belt', 'Has the Belt', b ? esc(b.holder) : 'Vacant', b ? `Since ${beltStart(b)}` : 'Nobody yet', b && b.from ? `Took it from ${esc(b.from)}` : ''),
     M.inProgress && lead ? tile('ip', `${M.currentYear} leader`, fmtRec(lead.w, lead.l, lead.t), esc(lead.key), esc(lead.team)) : '',
     M.inProgress && most ? tile('ip', `${M.currentYear} most points`, fmtPts(most.pf), esc(most.key), `Through Week ${M.currentWeek}`) : ''
   ].join('');
@@ -1066,17 +1066,17 @@ function renderBelt(el) {
   const hero = cur ? `<div class="card belt-hero">${BELT}<div><div class="lbl">Current holder</div><div class="holder">${esc(cur.holder)}</div>
       <div class="facts" style="margin-top:12px">
         <div class="fact"><div class="lbl">Since</div><div class="v">${startTxt(cur)}</div></div>
-        <div class="fact"><div class="lbl">Defenses</div><div class="v">${cur.defenses}</div></div>
+        <div class="fact"><div class="lbl">Games held</div><div class="v">${cur.defenses}</div></div>
         <div class="fact"><div class="lbl">Took it from</div><div class="v">${cur.from ? esc(cur.from) : 'Won the title'}</div></div>
-      </div>${cur.score ? `<div class="note muted" style="margin-top:6px;font-size:13px">Won it ${cur.score}${cur.defenses ? '' : '. Next game is the first defense'}.</div>` : ''}</div></div>`
+      </div>${cur.score ? `<div class="note muted" style="margin-top:6px;font-size:13px">Won it ${cur.score}.</div>` : ''}</div></div>`
     : `<div class="card belt-hero">${BELT}<div><div class="lbl">Current holder</div><div class="holder">Vacant</div><div class="sub">The ${B.vacantYear || M.currentYear} champion takes it after the final.</div></div></div>`;
   el.innerHTML = `<div><h2 class="sec">The Belt</h2><p class="sub">A lineal title that changes hands every time the holder loses.</p></div>
     ${hero}
     <p class="legend" style="margin-top:-8px">How it works: the ${M.firstYear} champion took the belt after the ${M.firstYear} final. Any game the holder loses, playoffs and consolation included, passes it to the winner. A tie keeps it. If the holder sits out a season, that season's champion takes it after the final. ${reigns.length} reigns so far.</p>
     <div class="belt-grid">
-      <div><h3 class="sub-h">Longest Reigns</h3><div class="card"><ol class="rlist"><li class="hd" aria-hidden="true"><span></span><span>Holder</span><span style="text-align:right">Defenses</span></li>${longest.map((r, i) => `<li><span class="i">${i + 1}</span><span class="n">${esc(r.holder)}${r.end == null ? ' <span class="muted">(current)</span>' : ''}</span><span class="c">${r.defenses}</span><span class="d">${startTxt(r)} to ${endTxt(r)}${r.end && r.end.how === 'lost' ? `, lost to ${esc(r.end.to)}` : ''}</span></li>`).join('')}</ol></div></div>
+      <div><h3 class="sub-h">Longest Reigns</h3><div class="card"><ol class="rlist"><li class="hd" aria-hidden="true"><span></span><span>Holder</span><span style="text-align:right">Games held</span></li>${longest.map((r, i) => `<li><span class="i">${i + 1}</span><span class="n">${esc(r.holder)}${r.end == null ? ' <span class="muted">(current)</span>' : ''}</span><span class="c">${r.defenses}</span><span class="d">${startTxt(r)} to ${endTxt(r)}${r.end && r.end.how === 'lost' ? `, lost to ${esc(r.end.to)}` : ''}</span></li>`).join('')}</ol></div></div>
       <div class="col">
-        <div><h3 class="sub-h">Belt Defenses by Manager</h3><div class="card"><div class="bars">${bars.map(b => `<div class="bar"><span class="bn">${esc(shortName(b.n))}</span><div class="track"><div class="fill" style="width:${(b.d / maxD * 100).toFixed(1)}%"></div></div><span class="bv">${b.d} <small>in ${b.r} ${b.r === 1 ? 'reign' : 'reigns'}</small></span></div>`).join('')}</div></div></div>
+        <div><h3 class="sub-h">Games Held by Manager</h3><div class="card"><div class="bars">${bars.map(b => `<div class="bar"><span class="bn">${esc(shortName(b.n))}</span><div class="track"><div class="fill" style="width:${(b.d / maxD * 100).toFixed(1)}%"></div></div><span class="bv">${b.d} <small>in ${b.r} ${b.r === 1 ? 'reign' : 'reigns'}</small></span></div>`).join('')}</div></div></div>
         <div><h3 class="sub-h">Latest Changes</h3><div class="card"><ol class="rlist plain">${recent.map(r => `<li><span class="n">${esc(r.holder)}</span><span class="c" style="font-size:15px">${startTxt(r)}</span><span class="d">${r.how === 'champ' ? 'Took it as champion' : `Beat ${esc(r.from)} ${r.score}`}</span></li>`).join('')}</ol></div></div>
       </div>
     </div>`;
