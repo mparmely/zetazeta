@@ -380,6 +380,94 @@ body:not([data-tab="home"]) .rafters { display: none; }
 .ban.open { background: var(--accent-band); color: var(--on-accent-band); box-shadow: inset 0 5px 0 var(--band); }
 @media (min-width: 720px) { .ban { width: 96px; min-height: 166px; } .ban-y { font-size: 38px; } }
 
+/* ===== v1c: This Week, The Never Club, Rivalries, Bad Beats and Heartbreaks, card backs ===== */
+.wk-chip { align-self: center; background: var(--accent); color: var(--on-accent); font: 900 18px/1 var(--font-display); letter-spacing: .08em; text-transform: uppercase; padding: 7px 11px 6px; border-radius: 2px; transform: skewX(-8deg); white-space: nowrap; }
+.wkx { display: grid; gap: 12px; }
+.tw-grid { display: grid; gap: 10px; }
+@media (min-width: 640px) { .tw-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (min-width: 1000px) { .tw-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+.tw-row { padding: 0; display: grid; grid-template-rows: auto 1fr; }
+.tw-vs { display: grid; grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr); align-items: start; gap: 10px; padding: 12px 12px 11px; }
+.tw-side { display: grid; gap: 3px; min-width: 0; }
+.tw-x + .tw-side { text-align: right; }
+.tw-n { font: 800 20px/0.98 var(--font-display); text-transform: uppercase; letter-spacing: .01em; overflow-wrap: break-word; }
+.tw-t { font-size: 12px; line-height: 1.25; color: var(--ink-3); overflow-wrap: break-word; }
+.tw-p { font: 900 26px/1 var(--font-display); font-variant-numeric: tabular-nums; margin-top: 3px; color: var(--ink-3); }
+.tw-side.win .tw-p { color: var(--ink); }
+.tw-x { align-self: center; font: 900 14px/1 var(--font-display); text-transform: uppercase; letter-spacing: .08em; color: var(--on-accent); background: var(--accent); padding: 5px 7px 4px; transform: skewX(-12deg); }
+.tw-meta { display: grid; gap: 4px; padding: 8px 12px 10px; background: var(--surface-2); border-top: 1px solid var(--line); border-radius: 0 0 4px 4px; font-size: 12.5px; line-height: 1.35; color: var(--ink-2); }
+.tw-meta b { display: inline-block; min-width: 4.4em; font: 600 10.5px/1 var(--font-body); letter-spacing: .12em; text-transform: uppercase; color: var(--ink-3); }
+/* the never club and droughts */
+.nc { display: grid; }
+.nc-row { display: grid; gap: 8px; padding: 12px 0; border-top: 1px solid var(--line); }
+.nc-row:first-child { border-top: 0; padding-top: 0; }
+.nc-row:last-child { padding-bottom: 0; }
+.nc-h { display: flex; align-items: baseline; gap: 8px; }
+.nc-n { font: 800 22px/1 var(--font-display); text-transform: uppercase; letter-spacing: .01em; }
+.nc-row.former .nc-n { color: var(--ink-2); }
+.nc-tag { font-size: 12px; color: var(--ink-3); }
+.nc-stats { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px 12px; }
+@media (min-width: 460px) { .nc-stats { grid-template-columns: repeat(4, minmax(0, 1fr)); } }
+.nc-stats .k { display: block; font: 600 10.5px/1.2 var(--font-body); letter-spacing: .1em; text-transform: uppercase; color: var(--ink-3); }
+.nc-stats .v { display: block; font: 800 21px/1.1 var(--font-display); font-variant-numeric: tabular-nums; margin-top: 2px; }
+.nc-stats .v small { display: block; font: 500 11.5px/1.25 var(--font-body); color: var(--ink-3); }
+.dr { list-style: none; margin: 0; padding: 0; }
+.dr li { display: grid; grid-template-columns: minmax(0, 1fr) 6.2em 6.2em; gap: 10px; align-items: baseline; padding: 9px 0; border-top: 1px solid var(--line); }
+.dr li:first-child { border-top: 0; padding-top: 0; }
+.dr li.hd span { font: 600 10.5px/1.2 var(--font-body); letter-spacing: .1em; text-transform: uppercase; color: var(--ink-3); }
+.dr li.hd span + span { text-align: right; }
+.dr .n { font-weight: 600; }
+.dr .c { text-align: right; font: 800 22px/1 var(--font-display); font-variant-numeric: tabular-nums; }
+.dr .c small { display: block; font: 500 11px/1.2 var(--font-body); color: var(--ink-3); margin-top: 2px; }
+/* rivalries */
+.rv { display: grid; gap: 10px; }
+.rv-lists { display: grid; gap: 12px; }
+.rv-list { display: none; }
+.rv-list.on { display: block; }
+.rv-list > h3 { display: none; margin-bottom: 2px; }
+.rv-note { margin: 0 0 10px; font-size: 12.5px; color: var(--ink-3); }
+@media (min-width: 900px) { .rv-chips { display: none; } .rv-lists { grid-template-columns: repeat(3, minmax(0, 1fr)); align-items: start; } .rv-list { display: block; } .rv-list > h3 { display: block; } }
+.rv-list ol { list-style: none; margin: 0; padding: 0; }
+.rv-list li { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 6px 10px; padding: 10px 0; border-top: 1px solid var(--line); align-items: baseline; }
+.rv-list li:first-child { border-top: 0; padding-top: 0; }
+.rv-p { font-weight: 600; }
+.rv-p small { display: block; font-weight: 400; font-size: 12px; color: var(--ink-3); }
+.rv-r { font: 800 24px/1 var(--font-display); font-variant-numeric: tabular-nums; text-align: right; }
+.rv-list .sbar { grid-column: 1 / -1; height: 6px; }
+/* bad beats and heartbreaks */
+.bbx { display: grid; gap: 12px; }
+.bbh { display: grid; gap: 12px; }
+@media (min-width: 760px) { .bbh { grid-template-columns: repeat(2, minmax(0, 1fr)); align-items: start; } }
+.bbh .sub-h { margin-bottom: 2px; }
+.bb-hero { margin: 0 -14px 6px; padding: 12px 14px; background: var(--surface-2); border-block: 1px solid var(--line); }
+.bb-hero .val { font: 900 44px/0.95 var(--font-display); font-variant-numeric: tabular-nums; margin-top: 6px; color: var(--bad); }
+.bb-hero .who { font-weight: 600; margin-top: 5px; }
+.bb-hero .when { font-size: 13px; color: var(--ink-3); }
+.bb-list { list-style: none; margin: 0; padding: 0; }
+.bb-list li { display: grid; grid-template-columns: 22px minmax(0, 1fr) auto; gap: 10px; align-items: baseline; padding: 9px 0; border-top: 1px solid var(--line); }
+.bb-list li:first-child { border-top: 0; }
+.bb-list .i { font: 900 18px var(--font-display); color: var(--ink-3); }
+.bb-list .n { font-weight: 600; }
+.bb-list .c { font: 800 22px/1 var(--font-display); font-variant-numeric: tabular-nums; text-align: right; }
+.bb-list .c small { font: 500 11px var(--font-body); color: var(--ink-3); margin-left: 5px; }
+/* card back */
+.cb-tog { appearance: none; justify-self: start; display: inline-flex; align-items: center; gap: 8px; min-height: 42px; padding: 0 14px; border: 1px solid var(--line); border-radius: 2px; background: var(--surface-2); color: var(--ink); font: 800 16px/1 var(--font-display); letter-spacing: .1em; text-transform: uppercase; cursor: pointer; }
+.cb-tog:hover { border-color: var(--accent); }
+.cb-tog svg { width: 16px; height: 16px; transition: transform .3s; }
+.cb-tog[aria-expanded="true"] { background: var(--band); color: var(--band-ink); border-color: var(--band); }
+.cb-tog[aria-expanded="true"] svg { transform: rotate(180deg); }
+.cb { margin: 0 -14px; padding: 14px; background: var(--band); color: var(--band-ink); border-block: 3px solid var(--gold-band); transform-origin: top center; }
+.cb:not([hidden]) { animation: cbFlip .32s ease-out; }
+@keyframes cbFlip { from { transform: perspective(700px) rotateX(-14deg); opacity: .35; } to { transform: none; opacity: 1; } }
+.cb-title { display: flex; justify-content: space-between; align-items: baseline; gap: 10px; margin-bottom: 10px; font: 900 16px/1 var(--font-display); letter-spacing: .14em; text-transform: uppercase; color: var(--gold-band); }
+.cb dl { margin: 0; display: grid; }
+.cb-row { display: grid; grid-template-columns: 7.6em minmax(0, 1fr); gap: 12px; padding: 8px 0; border-top: 1px solid var(--band-line); align-items: baseline; }
+.cb-row:first-child { border-top: 0; padding-top: 0; }
+.cb dt { font: 600 10.5px/1.3 var(--font-body); letter-spacing: .1em; text-transform: uppercase; color: var(--band-ink-2); }
+.cb dd { margin: 0; min-width: 0; font: 800 20px/1.05 var(--font-display); font-variant-numeric: tabular-nums; }
+.cb dd small { display: block; margin-top: 3px; font: 500 12px/1.3 var(--font-body); color: var(--band-ink-2); }
+.cb dd .sep { margin: 0 6px; color: var(--accent-band); }
+@media (prefers-reduced-motion: reduce) { .cb:not([hidden]) { animation: none; } .cb-tog svg { transition: none; } }
 </style>
 </head>
 <body>
@@ -442,7 +530,8 @@ const CONFIG = { sheetId: "11kxGx8icTclryc_Im-rzlECyySYh45vMqEvosi36Etg", // Goo
                  localData: false };  // true = read ./data CSVs first. The CSVs are also the automatic fallback when the live Sheet does not answer.
 
 /* PURE:START (no DOM access; tests/run-tests.js loads this block) */
-const TAB_NAMES = ['data_managers', 'data_seasons', 'data_games', 'data_h2h', 'data_records', 'data_meta'];
+const TAB_NAMES = ['data_managers', 'data_seasons', 'data_games', 'data_h2h', 'data_records', 'data_meta', 'data_schedule'];
+const OPTIONAL_TABS = ['data_schedule'];  // a missing optional tab hides its section instead of failing the page
 
 function parseCSV(text) {
   text = String(text || '');
@@ -537,19 +626,22 @@ async function loadCsvTab(name) {
   if (!r.ok) throw new Error(`Could not read data/${name}.csv (HTTP ${r.status}).`);
   return parseCSV(await r.text());
 }
-/* Live Sheet first (unless localData is on); if any tab fails, the whole set comes from ./data CSVs,
-   so the page never mixes live and saved rows. */
+/* Live Sheet first (unless localData is on); if a required tab fails, the whole set comes from ./data CSVs,
+   so the page never mixes live and saved rows. Optional tabs come from the same source as the rest;
+   a missing one only hides its section. */
 async function loadAll() {
-  const csvSet = () => Promise.all(TAB_NAMES.map(loadCsvTab));
+  const REQ = TAB_NAMES.filter(n => !OPTIONAL_TABS.includes(n));
+  const opt = loader => Promise.all(OPTIONAL_TABS.map(n => loader(n).catch(err => { console.warn(`Optional tab ${n} skipped:`, err.message); return null; })));
+  const csvSet = () => Promise.all(REQ.map(loadCsvTab));
   if (CONFIG.sheetId && !CONFIG.localData) {
-    try { return { parts: await Promise.all(TAB_NAMES.map(loadSheetTab)), source: 'sheet' }; }
+    try { const parts = await Promise.all(REQ.map(loadSheetTab)); return { parts, optional: await opt(loadSheetTab), source: 'sheet' }; }
     catch (err) {
       console.warn('Live Sheet failed, using the saved CSV copy:', err.message);
-      try { return { parts: await csvSet(), source: 'csv-fallback', why: err.message }; }
+      try { return { parts: await csvSet(), optional: await opt(loadCsvTab), source: 'csv-fallback', why: err.message }; }
       catch (e2) { throw err; }
     }
   }
-  if (CONFIG.localData) return { parts: await csvSet(), source: 'csv' };
+  if (CONFIG.localData) return { parts: await csvSet(), optional: await opt(loadCsvTab), source: 'csv' };
   throw new Error('No data source is set. Add the Sheet id in CONFIG, or turn on localData.');
 }
 
@@ -571,14 +663,15 @@ function buildModel(raw) {
       complete: truthy(r.complete), madePO: truthy(r.made_playoffs), w, l, t, pct: winPct(w, l, t),
       pf: num(r.reg_pf), pa: num(r.reg_pa), totPf: num(r.tot_pf), totPa: num(r.tot_pa), luck: num(r.luck),
       allplay: num(r.allplay_pct), poW: num(r.po_w) || 0, poL: num(r.po_l) || 0,
-      high: num(r.high_week), highWk: num(r.high_week_no), low: num(r.low_week), lowWk: num(r.low_week_no)
+      high: num(r.high_week), highWk: num(r.high_week_no), low: num(r.low_week), lowWk: num(r.low_week_no),
+      weeksTop: num(r.weeks_top) || 0, weeksBottom: num(r.weeks_bottom) || 0
     };
   }).filter(s => s.year != null && s.key);
 
   const games = raw.data_games.map(r => ({
     year: num(r.year), week: num(r.week), m: canon(r.manager), team: String(r.team || '').trim(), pts: num(r.pts),
     opp: canon(r.opp_manager), oppPts: num(r.opp_pts), res: String(r.result || '').trim().toUpperCase(),
-    margin: num(r.margin), stage: String(r.stage || '').trim()
+    margin: num(r.margin), stage: String(r.stage || '').trim(), weeks: num(r.weeks) || 1
   })).filter(g => g.year != null && g.week != null && g.m);
 
   const years = [...new Set(seasons.map(s => s.year))].sort((a, b) => a - b);
@@ -625,7 +718,14 @@ function buildModel(raw) {
   const curSeason = seasons.filter(s => s.year === currentYear);
   const inProgress = curSeason.length > 0 && curSeason.some(s => !s.complete);
   const qualified = managers;  /* ranks cover every eligible manager, same as the Sheet */
-  return { meta, seasons, games, managers, mByName, h2h, records, years, firstYear, currentYear, currentWeek, champs, champInfo, inProgress, qualified, league: meta.league || 'Zeta Zeta' };
+  /* data_schedule (optional): every game of the current season, played or not */
+  const sch = raw.data_schedule;
+  const schedule = Array.isArray(sch) && sch.length && ('home_manager' in sch[0]) ? sch.map(r => ({
+    year: num(r.year), week: num(r.week), home: canon(r.home_manager), homeTeam: String(r.home_team || '').trim(),
+    away: canon(r.away_manager), awayTeam: String(r.away_team || '').trim(), hp: num(r.home_pts), ap: num(r.away_pts),
+    played: truthy(r.played), stage: String(r.stage || '').trim()
+  })).filter(g => g.year != null && g.week != null && g.home && g.away) : null;
+  return { meta, seasons, games, managers, mByName, h2h, records, schedule, years, firstYear, currentYear, currentWeek, champs, champInfo, inProgress, qualified, league: meta.league || 'Zeta Zeta' };
 }
 
 /* ---------------- helpers ---------------- */
@@ -757,9 +857,9 @@ function renderHome(el) {
     .sort((a, b) => b.m.titles - a.m.titles || b.ru.length - a.ru.length || a.m.name.localeCompare(b.m.name));
   const cupw = (cls, y, what) => `<span class="cupw ${cls}" data-tip="${y} ${what}" aria-label="${y} ${what}">${CUP}${y}</span>`;
   const trophy = tc.map(x => `<div class="tc-row"><span class="tc-n">${esc(x.m.name)}</span><span class="tc-cups">${x.m.titleYears.map(y => cupw('gold', y, 'champion')).join('')}${x.ru.map(y => cupw('silver', y, 'runner-up')).join('')}</span></div>`).join('');
-  el.innerHTML = `<div class="home-grid">
+  el.innerHTML = `${thisWeekHtml()}<div class="home-grid">
     <div class="col"><div><h2 class="sec">League Leaders</h2><p class="sub">${M.years.length} seasons, ${fmtInt(M.games.length / 2)} games, every one on ESPN.</p></div><div class="tiles">${tiles}</div>
-      <div><div class="sec-head" style="margin-bottom:10px"><h2 class="sec">Trophy Case</h2><span class="tc-key"><span class="cupw gold">${CUP}</span>Title<span class="cupw silver">${CUP}</span>Runner-up</span></div><div class="card">${trophy}</div></div></div>
+      <div><div class="sec-head" style="margin-bottom:10px"><h2 class="sec">Trophy Case</h2><span class="tc-key"><span class="cupw gold">${CUP}</span>Title<span class="cupw silver">${CUP}</span>Runner-up</span></div><div class="card">${trophy}</div></div>${neverClubHtml()}</div>
     <div class="col"><div><h2 class="sec">Champions</h2><p class="sub">Newest first.</p></div><div class="card"><ol class="champs">${rows}</ol></div></div>
   </div>`;
 }
@@ -830,6 +930,7 @@ function mgrCard(m) {
     ${m.titles ? `<div class="mtitles">Titles: ${m.titleYears.join(', ')}</div>` : ''}</div>${tr}</div>
     ${finishSpark(m)}
     <div class="stats">${stats}</div>
+    <button type="button" class="cb-tog" aria-expanded="false">${FLIP}Card back</button><div class="cb" hidden></div>
     <details class="more"><summary>Season by season</summary><div class="stbl"></div></details>
   </article>`;
 }
@@ -859,8 +960,13 @@ function drawManagers(el) {
     if (d.open && !host.dataset.done) { const m = M.mByName.get(d.closest('.mc').dataset.m); sortTable(host, seasonCols(), m.list, { sort: 'year', dir: 'desc', rowCls: s => s.complete && s.finish === 1 ? 'champ-row' : '' }); host.dataset.done = '1'; }
   }));
   body.querySelectorAll('.mc').forEach(c => c.addEventListener('click', e => {
-    if (e.target.closest('summary, .stbl, [data-tip], a, button')) return;
+    if (e.target.closest('summary, .stbl, .cb, [data-tip], a, button')) return;
     const d = c.querySelector('details.more'); d.open = !d.open;
+  }));
+  body.querySelectorAll('.cb-tog').forEach(b => b.addEventListener('click', () => {
+    const c = b.closest('.mc'), p = c.querySelector('.cb'), open = b.getAttribute('aria-expanded') !== 'true';
+    if (open && !p.dataset.done) { p.innerHTML = cardBackHtml(M.mByName.get(c.dataset.m)); p.dataset.done = '1'; }
+    p.hidden = !open; b.setAttribute('aria-expanded', String(open)); c.classList.toggle('flipped', open);
   }));
 }
 function drawManagerTable(host) {
@@ -907,10 +1013,11 @@ function drawSeason(el) {
     : `In progress, through Week ${weeks.length ? weeks[weeks.length - 1] : 0}. Ranks are current standings.`;
 
   // callouts
-  const wins = gs.filter(g => g.res === 'W');
+  const one = gs.filter(g => (g.weeks || 1) <= 1);  // single-week games only; 2014's two-week playoff rounds are left out
+  const wins = one.filter(g => g.res === 'W');
   const pick = (arr, f, dir) => arr.reduce((best, g) => best == null || (dir > 0 ? f(g) > f(best) : f(g) < f(best)) ? g : best, null);
-  const hi = pick(gs.filter(g => g.pts != null), g => g.pts, 1);
-  const lo = pick(gs.filter(g => g.pts != null && g.pts > 0), g => g.pts, -1);
+  const hi = pick(one.filter(g => g.pts != null), g => g.pts, 1);
+  const lo = pick(one.filter(g => g.pts != null && g.pts > 0), g => g.pts, -1);
   const blow = pick(wins, g => g.margin ?? (g.pts - g.oppPts), 1);
   const close = pick(wins.filter(g => (g.margin ?? (g.pts - g.oppPts)) > 0), g => g.margin ?? (g.pts - g.oppPts), -1);
   const mostPf = pick(ss.filter(s => s.pf != null), s => s.pf, 1);
@@ -954,7 +1061,7 @@ function drawSeason(el) {
 
   // heat strip
   const order = ss.slice().sort((a, b) => ((complete ? a.finish : a.seed) ?? 99) - ((complete ? b.finish : b.seed) ?? 99));
-  const pts = gs.map(g => g.pts).filter(v => v != null && v > 0);
+  const pts = one.map(g => g.pts).filter(v => v != null && v > 0);
   const mn = Math.min(...pts), mx = Math.max(...pts);
   const firstPo = gs.filter(g => g.stage !== 'Reg').reduce((a, g) => Math.min(a, g.week), Infinity);
   const regW = weeks.filter(w => w < firstPo), poW = weeks.filter(w => w >= firstPo);
@@ -964,9 +1071,9 @@ function drawSeason(el) {
   const cellHtml = (s, w) => {
     const g = byKey.get(`${s.key}|${w}`);
     if (!g || g.pts == null) return `<div class="hc none" aria-hidden="true"></div>`;
-    const t = mx > mn ? (g.pts - mn) / (mx - mn) : .5;
+    const t = Math.max(0, Math.min(1, mx > mn ? (g.pts / (g.weeks || 1) - mn) / (mx - mn) : .5));
     const res = g.res === 'W' ? 'beat' : g.res === 'L' ? 'lost to' : 'tied';
-    return `<div class="hc" style="--t:${t.toFixed(3)}" data-tip="<b>${esc(shortName(s.key))}, Week ${w}: ${fmtPts(g.pts)}</b><br>${res} ${esc(shortName(g.opp))} (${fmtPts(g.oppPts)})${g.stage !== 'Reg' ? `<br>${g.stage}` : ''}"></div>`;
+    return `<div class="hc" style="--t:${t.toFixed(3)}" data-tip="<b>${esc(shortName(s.key))}, Week ${w}: ${fmtPts(g.pts)}${g.weeks > 1 ? ` over ${g.weeks} weeks` : ''}</b><br>${res} ${esc(shortName(g.opp))} (${fmtPts(g.oppPts)})${g.stage !== 'Reg' ? `<br>${g.stage}` : ''}"></div>`;
   };
   const heatRows = order.map(s => `<div class="hn">${esc(shortName(s.key))}</div>${regW.map(w => cellHtml(s, w)).join('')}${poW.length ? `<div class="gap"></div>${poW.map(w => cellHtml(s, w)).join('')}` : ''}`).join('');
 
@@ -1001,6 +1108,7 @@ function renderH2H(el) {
     state.h2h = M.managers.some(m => m.name === v) ? v : M.managers.some(m => m.name === reigning) ? reigning : act[0].name; }
   el.innerHTML = `<div class="sec-head"><div><h2 class="sec">Head-to-Head</h2><p class="sub">Every game ever played, playoffs and consolation included.</p></div>
     <div class="seg" role="group" aria-label="View"><button type="button" data-mx="0">One Manager</button><button type="button" data-mx="1">Full Grid</button></div></div>
+    ${rivalriesHtml()}
     <div id="h-one" class="panel"><div class="pick"><label for="h2h-pick">Manager</label><select id="h2h-pick" class="sel">
       <optgroup label="Active">${act.map(m => `<option value="${esc(m.name)}">${esc(m.name)}</option>`).join('')}</optgroup>
       ${fmr.length ? `<optgroup label="Former">${fmr.map(m => `<option value="${esc(m.name)}">${esc(m.name)}</option>`).join('')}</optgroup>` : ''}</select></div>
@@ -1087,8 +1195,160 @@ function renderRecords(el) {
   };
   el.innerHTML = `<div><h2 class="sec">Record Book</h2><p class="sub">The league's all-time bests and worsts, 2013 to now.</p></div>
     <div class="rec-groups">${ORDER.filter(g => groups.get(g).length).map(g => `<div><h3 class="sub-h">${g}</h3><div class="recs">${groups.get(g).map(card).join('')}</div></div>`).join('')}</div>
+    ${badBeatsHtml()}
     <p class="legend">Luck is win % minus all-play win % (the record you would have playing every team every week).</p>`;
 }
+
+/* ---------------- league extras: this week, the never club, rivalries, bad beats, card backs ---------------- */
+/* Single-game and single-week stats skip multi-week matchups (the 2014 playoff rounds ran two weeks). */
+const oneWeek = g => (g.weeks || 1) <= 1;
+const BAD_BEAT = 150;   // a loss while scoring this many points or more
+const HEARTBREAK = 3;   // a loss by less than this many points
+const isElig = n => (M.mByName.get(n) || {}).eligible !== false;
+const isActive = n => !!(M.mByName.get(n) || {}).active;
+function nick(n) {
+  const first = String(n || '').split(/\s+/)[0];
+  return M.managers.filter(m => m.name.split(/\s+/)[0] === first).length > 1 ? shortName(n) : first;
+}
+const wkTxt = g => `${g.year} Week ${g.week}${g.stage && g.stage !== 'Reg' ? (g.stage === 'Playoffs' ? ', playoffs' : ', consolation') : ''}`;
+const latest = arr => arr.reduce((x, g) => !x || g.year > x.year || (g.year === x.year && g.week > x.week) ? g : x, null);
+const maxBy = (arr, f) => arr.reduce((x, g) => !x || f(g) > f(x) ? g : x, null);
+const minBy = (arr, f) => arr.reduce((x, g) => !x || f(g) < f(x) ? g : x, null);
+function seriesTxt(a, b) {
+  const r = M.h2h.find(x => x.m === a && x.o === b);
+  if (!r || !(r.w + r.l + r.t)) return 'First meeting';
+  if (r.w === r.l) return `Tied ${fmtRec(r.w, r.l, r.t)}`;
+  return `${esc(nick(r.w > r.l ? a : b))} leads ${fmtRec(Math.max(r.w, r.l), Math.min(r.w, r.l), r.t)}`;
+}
+function meetTxt(g) {
+  if (!g) return 'No meetings yet';
+  if (g.res === 'T') return `${wkTxt(g)}, tied at ${fmtPts(g.pts)}`;
+  const won = g.res === 'W';
+  return `${wkTxt(g)}, ${esc(nick(won ? g.m : g.opp))} won ${fmtPts(won ? g.pts : g.oppPts)} to ${fmtPts(won ? g.oppPts : g.pts)}`;
+}
+
+/* This Week: the lowest unplayed week in data_schedule; in the offseason, the latest week's results. */
+function thisWeekHtml() {
+  const S = M.schedule; if (!S || !S.length) return '';
+  const key = g => g.year * 100 + g.week;
+  const un = S.filter(g => !g.played), pl = S.filter(g => g.played);
+  const results = !un.length; if (results && !pl.length) return '';
+  const pick = results ? Math.max(...pl.map(key)) : Math.min(...un.map(key));
+  const yr = Math.floor(pick / 100), wk = pick % 100;
+  const gs = S.filter(g => key(g) === pick);
+  const side = (n, t, p, win) => `<div class="tw-side${win ? ' win' : ''}"><span class="tw-n">${esc(n)}</span><span class="tw-t">${esc(t)}</span>${results && p != null ? `<span class="tw-p">${fmtPts(p)}</span>` : ''}</div>`;
+  const rows = gs.map(g => {
+    const done = results && g.hp != null && g.ap != null;
+    const last = latest(M.games.filter(x => x.m === g.home && x.opp === g.away && x.pts != null && key(x) < pick));
+    return `<div class="card tw-row"><div class="tw-vs">${side(g.home, g.homeTeam, g.hp, done && g.hp > g.ap)}<span class="tw-x" aria-hidden="true">vs</span>${side(g.away, g.awayTeam, g.ap, done && g.ap > g.hp)}</div>
+      <div class="tw-meta"><span><b>Series</b>${seriesTxt(g.home, g.away)}</span><span><b>Last</b>${meetTxt(last)}</span></div></div>`;
+  }).join('');
+  const st = gs[0] && gs[0].stage && gs[0].stage !== 'Reg' ? `, ${gs[0].stage === 'Playoffs' ? 'playoffs' : 'consolation'}` : '';
+  return `<div class="wkx"><div class="sec-head"><div><h2 class="sec">${results ? 'Latest Results' : 'This Week'}</h2><p class="sub">${results ? 'Final scores.' : 'Upcoming matchups.'} Series counts every game ever played, playoffs included.</p></div><span class="wk-chip">Week ${wk}${results || yr !== M.currentYear ? `, ${yr}` : ''}${st}</span></div>
+    <div class="tw-grid">${rows}</div></div>`;
+}
+
+/* The Never Club (no titles yet) and title and playoff droughts for everyone else. */
+function neverClubHtml() {
+  const done = M.seasons.filter(s => s.complete);
+  if (!done.length) return '';
+  const lastC = Math.max(...done.map(s => s.year));
+  const mem = M.managers.filter(m => m.titles === 0).map(m => {
+    const comp = m.list.filter(s => s.complete && s.finish != null);
+    const bestF = comp.length ? Math.min(...comp.map(s => s.finish)) : null;
+    return { m, bestF, bestYears: comp.filter(s => s.finish === bestF).map(s => s.year), bestPf: maxBy(comp.filter(s => s.pf != null), s => s.pf), finals: comp.filter(s => s.finish === 2).length };
+  }).sort((a, b) => (a.bestF ?? 99) - (b.bestF ?? 99) || b.finals - a.finals || b.m.playoffs - a.m.playoffs || a.m.name.localeCompare(b.m.name));
+  const st = (k, v, s) => `<div><span class="k">${k}</span><span class="v">${v}${s ? `<small>${s}</small>` : ''}</span></div>`;
+  const members = mem.map(x => `<div class="nc-row${x.m.active ? '' : ' former'}"><div class="nc-h"><span class="nc-n">${esc(x.m.name)}</span>${x.m.active ? '' : '<span class="nc-tag">former</span>'}</div>
+    <div class="nc-stats">${st('Closest call', x.bestF ? ord(x.bestF) : 'None', x.bestYears.join(', '))}${st('Best season', x.bestPf ? fmtPts(x.bestPf.pf) : 'None', x.bestPf ? `PF, ${x.bestPf.year}` : '')}${st('Finals lost', x.finals)}${st('Playoffs', x.m.playoffs, `in ${x.m.seasons}`)}</div></div>`).join('');
+  const dr = M.managers.filter(m => m.titles > 0 && m.active).map(m => {
+    const lt = Math.max(...m.titleYears);
+    const po = m.list.filter(s => s.complete && s.madePO).map(s => s.year);
+    const lp = po.length ? Math.max(...po) : null;
+    return { m, lt, td: lastC - lt, lp, pd: lp == null ? null : lastC - lp };
+  }).sort((a, b) => b.td - a.td || (b.pd ?? 99) - (a.pd ?? 99) || a.m.name.localeCompare(b.m.name));
+  const drRows = dr.map(x => `<li><span class="n">${esc(x.m.name)}</span><span class="c">${x.td}<small>since ${x.lt}</small></span><span class="c">${x.pd == null ? 'None' : x.pd}<small>${x.lp == null ? 'never made it' : `since ${x.lp}`}</small></span></li>`).join('');
+  return `<div><div class="sec-head" style="margin-bottom:10px"><div><h2 class="sec">The Never Club</h2><p class="sub">Managers still chasing a first title, closest call first.</p></div></div>
+      <div class="card"><div class="nc">${members || '<div class="empty">Everyone has a title.</div>'}</div></div></div>
+    <div><h3 class="sub-h">Droughts</h3><div class="card"><ol class="dr"><li class="hd" aria-hidden="true"><span>Seasons since</span><span>Title</span><span>Playoffs</span></li>${drRows}</ol></div>
+      <p class="legend">Counted in finished seasons, through ${lastC}. 0 means it happened in ${lastC}.</p></div>`;
+}
+
+/* Rivalries: most played, closest series (15+ games), most one-sided (10+ games). */
+function rivalriesHtml() {
+  const seen = new Set(), pairs = [];
+  for (const r of M.h2h) {
+    if (!isElig(r.m) || !isElig(r.o)) continue;
+    const k = [r.m, r.o].sort().join('|'); if (seen.has(k)) continue; seen.add(k);
+    const g = r.w + r.l + r.t; if (!g) continue;
+    const up = r.w >= r.l;
+    pairs.push({ a: up ? r.m : r.o, b: up ? r.o : r.m, w: Math.max(r.w, r.l), l: Math.min(r.w, r.l), t: r.t, g, diff: Math.abs(r.w - r.l), pct: (Math.max(r.w, r.l) + .5 * r.t) / g, pw: up ? r.pw : r.pl, pl: up ? r.pl : r.pw });
+  }
+  const lists = [
+    { id: 'played', label: 'Most Played', note: 'Most games against each other.', rows: pairs.slice().sort((x, y) => y.g - x.g || x.diff - y.diff).slice(0, 5) },
+    { id: 'close', label: 'Closest Series', note: '15 or more games.', rows: pairs.filter(p => p.g >= 15).sort((x, y) => x.diff - y.diff || y.g - x.g).slice(0, 5) },
+    { id: 'lopsided', label: 'Most One-Sided', note: '10 or more games.', rows: pairs.filter(p => p.g >= 10).sort((x, y) => y.pct - x.pct || y.g - x.g).slice(0, 5) }
+  ];
+  const row = p => `<li><span class="rv-p">${p.w === p.l ? `${esc(nick(p.a))} and ${esc(nick(p.b))}, even` : `${esc(nick(p.a))} leads ${esc(nick(p.b))}`}<small>${p.g} games${p.pw + p.pl ? `, playoffs ${fmtRec(p.pw, p.pl)}` : ''}</small></span><span class="rv-r">${fmtRec(p.w, p.l, p.t)}</span>
+    <span class="sbar" role="img" aria-label="${p.w} to ${p.l}">${p.w ? `<span class="w" style="flex:${p.w}"></span>` : ''}${p.t ? `<span class="t" style="flex:${p.t}"></span>` : ''}${p.l ? `<span class="l" style="flex:${p.l}"></span>` : ''}</span></li>`;
+  return `<div class="rv"><div><h3 class="sub-h" style="margin-bottom:4px">Rivalries</h3><p class="sub">Pairs of managers with 2+ seasons. Records count every game.</p></div>
+    <div class="chips rv-chips" role="group" aria-label="Rivalry list">${lists.map((l, i) => `<button type="button" class="chip" data-rv="${l.id}" aria-pressed="${i === 0}">${l.label}</button>`).join('')}</div>
+    <div class="rv-lists">${lists.map((l, i) => `<div class="card rv-list${i === 0 ? ' on' : ''}" data-list="${l.id}"><h3 class="sub-h">${l.label}</h3><p class="rv-note">${l.note}</p><ol>${l.rows.map(row).join('')}</ol></div>`).join('')}</div></div>`;
+}
+document.addEventListener('click', e => {
+  const b = e.target.closest('[data-rv]'); if (!b) return;
+  const host = b.closest('.rv');
+  host.querySelectorAll('[data-rv]').forEach(x => x.setAttribute('aria-pressed', String(x === b)));
+  host.querySelectorAll('.rv-list').forEach(l => l.classList.toggle('on', l.dataset.list === b.dataset.rv));
+});
+
+/* Bad beats (lost while scoring 150+) and heartbreaks (lost by under 3). */
+function badBeatsHtml() {
+  const L = M.games.filter(g => g.res === 'L' && g.pts != null && g.oppPts != null && oneWeek(g) && isElig(g.m));
+  const bb = L.filter(g => g.pts >= BAD_BEAT), hb = L.filter(g => g.oppPts - g.pts > 0 && g.oppPts - g.pts < HEARTBREAK);
+  const top = arr => { const c = new Map(); arr.forEach(g => c.set(g.m, (c.get(g.m) || 0) + 1)); return [...c].sort((a, b) => b[1] - a[1] || a[0].localeCompare(b[0])).slice(0, 5); };
+  const big = maxBy(L, g => g.pts), nar = minBy(L.filter(g => g.oppPts - g.pts > 0), g => g.oppPts - g.pts);
+  const list = (arr, unit) => `<ol class="bb-list">${top(arr).map(([n, c], i) => `<li><span class="i">${i + 1}</span><span class="n">${esc(n)}</span><span class="c">${c}<small>${unit}</small></span></li>`).join('')}</ol>`;
+  const hero = (label, val, who, when) => `<div class="bb-hero"><div class="lbl">${label}</div><div class="val">${val}</div><div class="who">${who}</div><div class="when">${when}</div></div>`;
+  return `<div id="badbeats" class="bbx"><div><h2 class="sec">Bad Beats and Heartbreaks</h2><p class="sub">Every single-week loss in league history, ranked by how much it hurt.</p></div>
+    <div class="bbh">
+      <div class="card"><h3 class="sub-h">Bad Beats</h3><p class="rv-note">Losses while scoring ${BAD_BEAT} or more. ${bb.length} all-time.</p>
+        ${big ? hero('Most points in a loss', fmtPts(big.pts), `${esc(big.m)} lost to ${esc(big.opp)}, ${fmtPts(big.oppPts)}`, wkTxt(big)) : ''}${list(bb, 'bad beats')}</div>
+      <div class="card"><h3 class="sub-h">Heartbreaks</h3><p class="rv-note">Losses by less than ${HEARTBREAK} points. ${hb.length} all-time.</p>
+        ${nar ? hero('Narrowest loss ever', NF2.format(nar.oppPts - nar.pts), `${esc(nar.m)} lost to ${esc(nar.opp)}, ${NF2.format(nar.oppPts)} to ${NF2.format(nar.pts)}`, wkTxt(nar)) : ''}${list(hb, 'heartbreaks')}</div>
+    </div></div>`;
+}
+
+/* Card back: the baseball-card details for one manager. */
+function cardBackHtml(m) {
+  const vs = M.h2h.filter(r => r.m === m.name && isElig(r.o)).map(r => ({ ...r, g: r.w + r.l + r.t, pct: winPct(r.w, r.l, r.t) })).filter(r => r.g >= 6);
+  const nem = vs.slice().sort((a, b) => a.pct - b.pct || b.g - a.g)[0];
+  const bag = vs.slice().sort((a, b) => b.pct - a.pct || b.g - a.g)[0];
+  const mine = M.games.filter(g => g.m === m.name && g.pts != null && oneWeek(g));
+  const losses = mine.filter(g => g.res === 'L' && g.oppPts != null);
+  const bb = losses.filter(g => g.pts >= BAD_BEAT), worstBB = maxBy(bb, g => g.pts);
+  const hb = losses.filter(g => g.oppPts - g.pts > 0 && g.oppPts - g.pts < HEARTBREAK), nar = minBy(hb, g => g.oppPts - g.pts);
+  const scored = mine.filter(g => g.pts > 0), best = maxBy(scored, g => g.pts), worst = minBy(scored, g => g.pts);
+  const top = m.list.reduce((a, s) => a + (s.weeksTop || 0), 0), bot = m.list.reduce((a, s) => a + (s.weeksBottom || 0), 0);
+  const comp = m.list.filter(s => s.complete && s.finish != null);
+  const bestF = comp.length ? Math.min(...comp.map(s => s.finish)) : null;
+  const opp = r => `${esc(r.o)}<small>${fmtRec(r.w, r.l, r.t)} in ${r.g} games</small>`;
+  const rows = [
+    ['Nemesis', nem ? opp(nem) : 'None yet'],
+    ['Punching bag', bag && bag !== nem ? opp(bag) : 'None yet'],
+    ['Bad beats', `${bb.length}${worstBB ? `<small>Worst: ${fmtPts(worstBB.pts)} to ${esc(shortName(worstBB.opp))}'s ${fmtPts(worstBB.oppPts)}, ${wkTxt(worstBB)}</small>` : ''}`],
+    ['Heartbreaks', `${hb.length}${nar ? `<small>Closest: by ${NF2.format(nar.oppPts - nar.pts)} to ${esc(shortName(nar.opp))}, ${wkTxt(nar)}</small>` : ''}`],
+    ['Best week', best ? `${fmtPts(best.pts)}<small>${wkTxt(best)}</small>` : 'None'],
+    ['Worst week', worst ? `${fmtPts(worst.pts)}<small>${wkTxt(worst)}</small>` : 'None'],
+    ['Streaks', `${m.winStreak ?? 0} W<span class="sep">/</span>${m.lossStreak ?? 0} L<small>Longest win and loss runs</small>`],
+    ['Top score', `${top}<small>Weeks as the league's high scorer</small>`],
+    ['Shotguns', `${bot}<small>Weeks as the league's low scorer</small>`],
+    ['Points awards', `${m.mpa}<small>Regular-season points titles</small>`],
+    m.titles ? ['Titles', `${m.titles}<small>${m.titleYears.join(', ')}</small>`] : ['Never Club', `${bestF ? ord(bestF) : 'None'}<small>Closest call${bestF ? `, ${comp.filter(s => s.finish === bestF).map(s => s.year).join(', ')}` : ''}</small>`]
+  ];
+  return `<div class="cb-title"><span>Card back</span><span>${esc(m.first === m.last ? `${m.first}` : `${m.first}-${m.last}`)}</span></div><dl>${rows.map(([k, v]) => `<div class="cb-row"><dt>${k}</dt><dd>${v}</dd></div>`).join('')}</dl>`;
+}
+const FLIP = '<svg viewBox="0 0 16 16" aria-hidden="true"><path d="M2.5 6.5a5.5 5.5 0 0 1 9.6-3M13.5 9.5a5.5 5.5 0 0 1-9.6 3" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><path d="M12.6 1v3H9.6M3.4 15v-3h3" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>';
 
 /* ---------------- boot ---------------- */
 function paintChrome() {
@@ -1105,9 +1365,10 @@ function paintChrome() {
 }
 async function boot() {
   try {
-    const { parts, source } = await loadAll();
+    const { parts, optional, source } = await loadAll();
     window.__source = source;
-    const raw = {}; TAB_NAMES.forEach((n, i) => { raw[n] = parts[i]; });
+    const raw = {}; TAB_NAMES.filter(n => !OPTIONAL_TABS.includes(n)).forEach((n, i) => { raw[n] = parts[i]; });
+    OPTIONAL_TABS.forEach((n, i) => { raw[n] = optional[i]; });
     M = buildModel(raw);
     window.__model = M;
     paintChrome();
