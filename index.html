@@ -6,59 +6,50 @@
 <title>Zeta Zeta History</title>
 <meta name="claude:viewport-fit-sides" content="cover">
 <meta name="description" content="Zeta Zeta fantasy football league history, 2013 to today.">
-<meta name="theme-color" content="#f4f6f9" media="(prefers-color-scheme: light)">
-<meta name="theme-color" content="#0c1016" media="(prefers-color-scheme: dark)">
+<meta name="theme-color" content="#0b1630" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0b1630" media="(prefers-color-scheme: dark)">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23131a26'/%3E%3Ctext x='32' y='44' font-family='Arial Narrow,Arial,sans-serif' font-weight='700' font-size='34' text-anchor='middle' fill='%23d9ab3c'%3EZZ%3C/text%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=Barlow:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@600;700;800;900&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap">
 <script>
   window.__errors = [];
   window.addEventListener('error', function (e) { window.__errors.push(String(e.message || e)); });
   window.addEventListener('unhandledrejection', function (e) { window.__errors.push('promise: ' + String(e.reason && e.reason.message || e.reason)); });
 </script>
 <style>
-/* Layout: one centered column up to 1160px. Sticky tab bar under a masthead.
-   Phone = single column; tablet and desktop = multi-column grids and real tables.
-   Wide tables scroll inside their own box, never the page. */
+/* v1 Broadcast. Layout: unchanged tabs; a full-width navy broadcast band (wordmark + live pill)
+   with a scrolling champions ticker under it, then flat squared panels with big condensed numerals.
+   Dark-first: dark values on bare :root, light values under prefers-color-scheme: light. */
 :root {
-  --bg: #f4f6f9;
-  --surface: #ffffff;
-  --surface-2: #eef1f6;
-  --ink: #111722;
-  --ink-2: #434d60;
-  --ink-3: #5c677b;
-  --line: #dfe4eb;
-  --accent: #2a78d6;
-  --accent-ink: #1c5cab;
-  --gold: #b8821a;
-  --gold-soft: #f6ead0;
-  --good: #0ca30c;
-  --bad: #d03b3b;
-  --neutral: #a3abb8;
-  --silver: #8c96a6;
-  --heat-lo: #e6eef9;
-  --heat-hi: #104281;
-  --shadow: 0 1px 2px rgba(17, 23, 34, .05), 0 2px 10px rgba(17, 23, 34, .04);
-  --tip-bg: #111722;
-  --tip-ink: #f4f6f9;
-  --font-display: "Barlow Condensed", "Arial Narrow", "Roboto Condensed", system-ui, sans-serif;
-  --font-body: "Barlow", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
-  color-scheme: light;
+  --bg: #060b16; --surface: #0e1628; --surface-2: #142038; --ink: #f1f5fd; --ink-2: #b6c2da; --ink-3: #8a97b2;
+  --line: #1d2942; --accent: #1fb6ff; --accent-ink: #63cdff; --on-accent: #031120;
+  --gold: #f4b630; --gold-soft: #2a220e; --good: #22c06a; --bad: #ff4b5f; --on-bad: #ffffff;
+  --neutral: #56627d; --silver: #a7b2c8; --heat-lo: #101a30; --heat-hi: #1fb6ff;
+  --shadow: none; --tip-bg: #f1f5fd; --tip-ink: #060b16;
+  --band: #0b1630; --band-2: #0f1d3b; --band-line: #1c2c50; --band-ink: #f1f5fd; --band-ink-2: #a3b4d3;
+  --accent-band: #1fb6ff; --on-accent-band: #031120; --gold-band: #f4b630;
+  --font-display: "Big Shoulders Display", "Impact", "Haettenschweiler", sans-serif;
+  --font-body: "IBM Plex Sans", "Helvetica Neue", Helvetica, sans-serif;
+  color-scheme: dark;
 }
-@media (prefers-color-scheme: dark) {
-  :root:not([data-theme="light"]) {
-    --bg: #0c1016; --surface: #151b24; --surface-2: #1b232e; --ink: #eef1f6; --ink-2: #b9c1ce; --ink-3: #8f99a9;
-    --line: #27303c; --accent: #3987e5; --accent-ink: #86b6ef; --gold: #d9ab3c; --gold-soft: #3a3020;
-    --good: #0ca30c; --bad: #e05555; --neutral: #6b7484; --silver: #9aa4b4; --heat-lo: #1a2433; --heat-hi: #9ec5f4;
-    --shadow: none; --tip-bg: #eef1f6; --tip-ink: #0c1016; color-scheme: dark;
+@media (prefers-color-scheme: light) {
+  :root:not([data-theme="dark"]) {
+    --bg: #e8edf5; --surface: #ffffff; --surface-2: #f0f3f9; --ink: #08101f; --ink-2: #354260; --ink-3: #576480;
+    --line: #d3dae6; --accent: #0071c2; --accent-ink: #005a9c; --on-accent: #ffffff;
+    --gold: #a97508; --gold-soft: #fbeccc; --good: #0f8a47; --bad: #d1293d; --on-bad: #ffffff;
+    --neutral: #a2abbd; --silver: #848fa3; --heat-lo: #e1ebf8; --heat-hi: #00539a;
+    --shadow: 0 1px 2px rgba(8, 16, 31, .06); --tip-bg: #08101f; --tip-ink: #ffffff;
+    color-scheme: light;
   }
 }
-:root[data-theme="dark"] {
-  --bg: #0c1016; --surface: #151b24; --surface-2: #1b232e; --ink: #eef1f6; --ink-2: #b9c1ce; --ink-3: #8f99a9;
-  --line: #27303c; --accent: #3987e5; --accent-ink: #86b6ef; --gold: #d9ab3c; --gold-soft: #3a3020;
-  --good: #0ca30c; --bad: #e05555; --neutral: #6b7484; --silver: #9aa4b4; --heat-lo: #1a2433; --heat-hi: #9ec5f4;
-  --shadow: none; --tip-bg: #eef1f6; --tip-ink: #0c1016; color-scheme: dark;
+:root[data-theme="light"] {
+  --bg: #e8edf5; --surface: #ffffff; --surface-2: #f0f3f9; --ink: #08101f; --ink-2: #354260; --ink-3: #576480;
+  --line: #d3dae6; --accent: #0071c2; --accent-ink: #005a9c; --on-accent: #ffffff;
+  --gold: #a97508; --gold-soft: #fbeccc; --good: #0f8a47; --bad: #d1293d; --on-bad: #ffffff;
+  --neutral: #a2abbd; --silver: #848fa3; --heat-lo: #e1ebf8; --heat-hi: #00539a;
+  --shadow: 0 1px 2px rgba(8, 16, 31, .06); --tip-bg: #08101f; --tip-ink: #ffffff;
+  color-scheme: light;
 }
 *, *::before, *::after { box-sizing: border-box; }
 html { -webkit-text-size-adjust: 100%; text-size-adjust: 100%; }
@@ -72,8 +63,6 @@ button { font: inherit; color: inherit; }
 /* masthead */
 .mast { padding-block: calc(env(safe-area-inset-top, 0px) + 18px) 14px; display: flex; gap: 14px; align-items: center; }
 .mono { flex: 0 0 auto; width: 52px; height: 52px; border-radius: 13px; background: #131a26; color: #d9ab3c; display: grid; place-items: center; font: 700 26px/1 var(--font-display); letter-spacing: .02em; }
-:root[data-theme="dark"] .mono { background: #1f2836; }
-@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .mono { background: #1f2836; } }
 .mast-text { min-width: 0; flex: 1; }
 .mast h1 { margin: 0; font: 700 34px/0.95 var(--font-display); text-transform: uppercase; letter-spacing: .02em; text-wrap: balance; }
 .mast .span { font: 600 14px/1.2 var(--font-display); text-transform: uppercase; letter-spacing: .14em; color: var(--gold); margin-top: 4px; }
@@ -115,7 +104,6 @@ h3.sub-h { margin: 0 0 10px; font: 700 15px/1.1 var(--font-display); text-transf
 .tile .val { font: 600 32px/1.02 var(--font-display); margin-top: 8px; letter-spacing: .01em; }
 .tile .who { font-weight: 600; font-size: 14.5px; line-height: 1.3; margin-top: 4px; }
 .tile .note { font-size: 12.5px; color: var(--ink-3); }
-.tile.belt { background: linear-gradient(160deg, var(--gold-soft), var(--surface) 70%); }
 .tile.ip .lbl::after { content: " \00B7  live"; color: var(--accent-ink); }
 @media (min-width: 720px) { .tile .val { font-size: 38px; } }
 
@@ -287,35 +275,6 @@ select.sel { appearance: none; -webkit-appearance: none; font: 600 18px/1.2 var(
 .rec .tmn { font-size: 13px; color: var(--ink-3); overflow-wrap: anywhere; }
 .rec .when { font-size: 13px; color: var(--ink-2); }
 
-/* belt */
-.belt-hero { display: grid; gap: 12px; padding: 18px; background: linear-gradient(150deg, var(--gold-soft), var(--surface) 65%); }
-.belt-hero .holder { font: 700 40px/0.95 var(--font-display); text-transform: uppercase; letter-spacing: .01em; }
-.belt-hero .facts { display: flex; flex-wrap: wrap; gap: 10px 28px; }
-.belt-hero .fact .v { font: 600 26px/1.1 var(--font-display); font-variant-numeric: tabular-nums; }
-.belt-icon { width: 64px; height: 30px; color: var(--gold); }
-.belt-grid { display: grid; gap: 22px; }
-@media (min-width: 900px) { .belt-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); align-items: start; } .belt-hero { grid-template-columns: auto 1fr; align-items: center; column-gap: 22px; } }
-.rlist { list-style: none; margin: 0; padding: 0; counter-reset: r; }
-.rlist li { display: grid; grid-template-columns: 26px minmax(0, 1fr) auto; gap: 2px 10px; padding: 10px 0; border-top: 1px solid var(--line); align-items: baseline; }
-.rlist li:first-child { border-top: 0; padding-top: 2px; }
-.rlist .i { font: 700 16px var(--font-display); color: var(--ink-3); }
-.rlist .n { font-weight: 600; }
-.rlist .d { font-size: 12.5px; color: var(--ink-3); grid-column: 2 / 3; }
-.rlist .c { font: 600 20px/1 var(--font-display); font-variant-numeric: tabular-nums; text-align: right; grid-row: 1; grid-column: 3; }
-.rlist .c small { display: block; font: 500 11px var(--font-body); color: var(--ink-3); }
-.rlist li.hd { padding: 0 0 6px; border-top: 0; }
-.rlist li.hd span { font: 600 11.5px/1.2 var(--font-display); text-transform: uppercase; letter-spacing: .09em; color: var(--ink-3); }
-.rlist.plain li { grid-template-columns: minmax(0, 1fr) auto; }
-.rlist.plain .d { grid-column: 1 / 2; }
-.rlist.plain .c { grid-column: 2; }
-.bars { display: grid; gap: 7px; }
-.bar { display: grid; grid-template-columns: 6.6em minmax(0, 1fr) auto; gap: 10px; align-items: center; font-size: 13.5px; }
-.bar .bn { font-weight: 600; white-space: nowrap; }
-.bar .track { height: 14px; }
-.bar .fill { height: 14px; background: var(--accent); border-radius: 0 4px 4px 0; min-width: 3px; }
-.bar .bv { font: 600 15px/1 var(--font-display); font-variant-numeric: tabular-nums; min-width: 4.8em; text-align: right; }
-.bar .bv small { font: 500 11px var(--font-body); color: var(--ink-3); }
-
 /* footer, tooltip, states */
 footer { border-top: 1px solid var(--line); padding-block: 18px 28px; font-size: 13px; color: var(--ink-3); }
 footer a { color: var(--accent-ink); }
@@ -325,18 +284,117 @@ footer p { margin: 0 0 4px; }
 .state { padding: 48px 0; text-align: center; color: var(--ink-3); }
 .state.err { color: var(--bad); }
 @media (prefers-reduced-motion: reduce) { * { scroll-behavior: auto !important; transition: none !important; } }
+/* ===== v1 Broadcast components ===== */
+body { font-family: var(--font-body); }
+body::before { background: var(--band); }
+.band { background: var(--band); color: var(--band-ink); }
+.band .mast { padding-block: calc(env(safe-area-inset-top, 0px) + 16px) 14px; gap: 14px; align-items: center; }
+.mono { width: 52px; height: 52px; border-radius: 3px; background: var(--accent-band); color: var(--on-accent-band); font: 900 28px/1 var(--font-display); transform: skewX(-9deg); }
+.mast h1 { font: 900 44px/0.86 var(--font-display); text-transform: uppercase; letter-spacing: .01em; color: var(--band-ink); }
+.mast .span { margin: 0 0 6px; font: 700 13px/1 var(--font-body); text-transform: uppercase; letter-spacing: .2em; color: var(--accent-band); }
+.mast .upd { color: var(--band-ink-2); font-size: 12.5px; margin-top: 7px; }
+.live-pill { margin-left: auto; align-self: flex-start; display: inline-flex; align-items: center; gap: 6px; background: var(--bad); color: var(--on-bad); font: 800 15px/1 var(--font-display); letter-spacing: .1em; text-transform: uppercase; padding: 6px 9px 5px; border-radius: 2px; white-space: nowrap; }
+.live-pill::before { content: ""; width: 7px; height: 7px; border-radius: 50%; background: currentColor; animation: blink 1.6s steps(2, start) infinite; }
+@keyframes blink { to { visibility: hidden; } }
+@media (min-width: 720px) {
+  .band .mast { padding-block: calc(env(safe-area-inset-top, 0px) + 26px) 22px; gap: 20px; }
+  .mono { width: 68px; height: 68px; font-size: 38px; }
+  .mast h1 { font-size: 70px; }
+  .live-pill { align-self: center; font-size: 17px; padding: 8px 12px 7px; }
+}
+/* signature: the champions ticker */
+.ticker { display: flex; align-items: stretch; background: var(--band-2); border-top: 1px solid var(--band-line); border-bottom: 3px solid var(--accent-band); overflow: hidden; padding-right: env(safe-area-inset-right, 0px); }
+.ticker-lab { flex: 0 0 auto; display: flex; align-items: center; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: 20px; background: var(--accent-band); color: var(--on-accent-band); font: 900 15px/1 var(--font-display); letter-spacing: .12em; text-transform: uppercase; clip-path: polygon(0 0, 100% 0, calc(100% - 11px) 100%, 0 100%); }
+.ticker-win { flex: 1 1 auto; min-width: 0; overflow: hidden; -webkit-mask-image: linear-gradient(90deg, transparent, #000 14px, #000 calc(100% - 28px), transparent); mask-image: linear-gradient(90deg, transparent, #000 14px, #000 calc(100% - 28px), transparent); }
+.ticker-run { display: flex; width: max-content; animation: tick 75s linear infinite; }
+.ticker:hover .ticker-run { animation-play-state: paused; }
+.tk-set { display: flex; gap: 30px; padding: 0 30px 0 12px; }
+.tk { display: inline-flex; align-items: center; gap: 7px; white-space: nowrap; font: 700 17px/1 var(--font-display); letter-spacing: .05em; text-transform: uppercase; color: var(--band-ink); padding-block: 10px 9px; }
+.tk b { color: var(--accent-band); font-weight: 900; }
+.tk .cup { color: var(--gold-band); width: 15px; height: 15px; }
+.tk.live b { color: var(--bad); }
+@keyframes tick { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+@media (prefers-reduced-motion: reduce) {
+  .ticker-run { animation: none; } .live-pill::before { animation: none; }
+  .ticker-win { overflow-x: auto; -webkit-mask-image: none; mask-image: none; }
+}
+/* tab bar */
+.tabbar { background: color-mix(in srgb, var(--bg) 94%, transparent); border-bottom: 1px solid var(--line); }
+.tab { font: 800 18px/1 var(--font-display); letter-spacing: .07em; color: var(--ink-3); padding: 15px 12px 12px; border-bottom: 3px solid transparent; }
+.tab[aria-selected="true"] { color: var(--ink); border-bottom-color: var(--accent); background: linear-gradient(0deg, color-mix(in srgb, var(--accent) 13%, transparent), transparent 80%); }
+@media (min-width: 720px) { .tab { padding-inline: 18px; font-size: 19px; } }
+/* headings and panels */
+h2.sec { display: flex; align-items: center; gap: 10px; font: 900 30px/0.95 var(--font-display); letter-spacing: .02em; }
+h2.sec::before { content: ""; flex: 0 0 auto; width: 9px; height: .74em; background: var(--accent); transform: skewX(-18deg); }
+h3.sub-h { font: 800 16px/1.1 var(--font-display); letter-spacing: .14em; color: var(--ink-2); }
+.card { border-radius: 4px; border: 1px solid var(--line); box-shadow: var(--shadow); }
+.lbl { font: 600 11.5px/1.2 var(--font-body); letter-spacing: .12em; color: var(--ink-3); }
+.tile .val { font: 900 42px/0.9 var(--font-display); margin-top: 10px; letter-spacing: .005em; font-variant-numeric: tabular-nums; }
+.tile .who { font-size: 14px; font-weight: 600; margin-top: 7px; }
+.tile.ip .lbl::after { content: "  \2022  LIVE"; color: var(--bad); }
+@media (min-width: 720px) { .tile .val { font-size: 58px; } }
+.champs .yr { font: 900 28px/0.95 var(--font-display); color: var(--accent-ink); }
+.champs li.live .yr { color: var(--bad); }
+.cupw { font: 700 13px/1 var(--font-display); }
+.chip { border-radius: 2px; font: 800 17px/1 var(--font-display); letter-spacing: .05em; }
+.chip[aria-pressed="true"] { background: var(--accent); color: var(--on-accent); border-color: var(--accent); }
+.seg { border-radius: 4px; }
+.seg button { border-radius: 2px; font: 800 15px/1 var(--font-display); letter-spacing: .1em; }
+.seg button[aria-pressed="true"] { background: var(--accent); color: var(--on-accent); }
+.tw { border-radius: 4px; }
+.t th, .t th.stick { background: var(--surface-2); }
+.t th button { font: 800 14px/1.1 var(--font-display); letter-spacing: .09em; }
+.t .champ-row td { background: color-mix(in srgb, var(--gold) 13%, var(--surface)); }
+.mname { font: 900 30px/0.95 var(--font-display); text-transform: uppercase; letter-spacing: .01em; }
+.trophies { font: 900 28px/1 var(--font-display); color: var(--gold); }
+.st .k { font: 600 10.5px/1.2 var(--font-body); letter-spacing: .1em; }
+.st .v { font: 800 22px/1.15 var(--font-display); }
+.rk { color: var(--accent-ink); font-weight: 600; }
+details.more > summary { font: 800 15px/1 var(--font-display); letter-spacing: .1em; }
+.callout .val { font: 900 34px/1 var(--font-display); }
+.mu .side .p { font: 900 24px/1 var(--font-display); }
+.mu.final { background: linear-gradient(150deg, color-mix(in srgb, var(--gold) 18%, var(--surface)), var(--surface) 72%); border-color: color-mix(in srgb, var(--gold) 45%, var(--line)); }
+.heat .hc { border-radius: 1px; }
+.hrow .hr { font: 900 24px/1 var(--font-display); }
+.sbar span { border-radius: 1px; }
+select.sel { font: 800 21px/1.2 var(--font-display); border-radius: 4px; text-transform: uppercase; letter-spacing: .03em; }
+.rec .val { font: 900 40px/1 var(--font-display); }
+#tip { border-radius: 3px; }
+
+/* ===== v1b Broadcast + Banners: championship banners hang from a navy rafter on Home ===== */
+.rafters { margin: 0 0 22px; }
+body:not([data-tab="home"]) .rafters { display: none; }
+.rafters .beam { height: 10px; background: var(--band); border-top: 2px solid var(--accent-band); border-radius: 1px; }
+.banners { list-style: none; margin: 0; display: flex; gap: 10px; overflow-x: auto; overscroll-behavior-x: contain; -webkit-overflow-scrolling: touch; scroll-snap-type: x proximity; scrollbar-width: none; padding: 0 30px 6px 2px; -webkit-mask-image: linear-gradient(90deg, #000 calc(100% - 40px), transparent); mask-image: linear-gradient(90deg, #000 calc(100% - 40px), transparent); }
+.banners::-webkit-scrollbar { display: none; }
+@media (hover: hover) and (pointer: fine) { .banners { scrollbar-width: thin; scrollbar-color: var(--line) transparent; padding-bottom: 10px; } .banners::-webkit-scrollbar { display: block; height: 6px; } .banners::-webkit-scrollbar-thumb { background: var(--line); border-radius: 3px; } }
+.banners:focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; }
+.hang { flex: 0 0 auto; position: relative; padding-top: 12px; scroll-snap-align: start; }
+.hang::before, .hang::after { content: ""; position: absolute; top: 0; width: 2px; height: 12px; background: var(--ink-3); }
+.hang::before { left: 15px; } .hang::after { right: 15px; }
+.ban { width: 88px; min-height: 156px; padding: 14px 6px 32px; display: flex; flex-direction: column; align-items: center; gap: 5px; text-align: center; background: var(--gold-band); color: var(--band); box-shadow: inset 0 5px 0 var(--band); clip-path: polygon(0 0, 100% 0, 100% 100%, 50% 85%, 0 100%); cursor: default; }
+.ban-y { font: 900 34px/0.9 var(--font-display); letter-spacing: .01em; }
+.ban .cup { width: 18px; height: 18px; color: var(--band); }
+.ban-n { font: 700 11.5px/1.2 var(--font-body); text-transform: uppercase; letter-spacing: .03em; overflow-wrap: anywhere; }
+.ban-t { margin-top: auto; font: 700 9.5px/1 var(--font-body); text-transform: uppercase; letter-spacing: .14em; opacity: .78; }
+.ban.open { background: var(--accent-band); color: var(--on-accent-band); box-shadow: inset 0 5px 0 var(--band); }
+@media (min-width: 720px) { .ban { width: 96px; min-height: 166px; } .ban-y { font-size: 38px; } }
+
 </style>
 </head>
 <body>
+<div class="band">
 <div class="wrap">
   <header class="mast">
     <div class="mono" aria-hidden="true">&#918;&#918;</div>
     <div class="mast-text">
-      <h1 id="league-name">Zeta Zeta</h1>
       <div class="span" id="league-span">League history</div>
+      <h1 id="league-name">Zeta Zeta</h1>
       <div class="upd" id="league-upd">Loading the record book...</div>
     </div>
+    <div class="live-pill" id="live-pill" hidden>Live</div>
   </header>
+</div>
 </div>
 <div class="tabbar">
   <nav class="wrap tabs" role="tablist" aria-label="Sections">
@@ -345,17 +403,16 @@ footer p { margin: 0 0 4px; }
     <button class="tab" role="tab" id="t-seasons" data-tab="seasons" aria-controls="p-seasons" aria-selected="false">Seasons</button>
     <button class="tab" role="tab" id="t-h2h" data-tab="h2h" aria-controls="p-h2h" aria-selected="false">Head-to-Head</button>
     <button class="tab" role="tab" id="t-records" data-tab="records" aria-controls="p-records" aria-selected="false">Records</button>
-    <button class="tab" role="tab" id="t-belt" data-tab="belt" aria-controls="p-belt" aria-selected="false">Belt</button>
   </nav>
 </div>
 <main class="wrap">
+  <div class="rafters" id="rafters" hidden></div>
   <div id="state" class="state">Loading the record book...</div>
   <section class="panel" id="p-home" role="tabpanel" aria-labelledby="t-home" hidden></section>
   <section class="panel" id="p-managers" role="tabpanel" aria-labelledby="t-managers" hidden></section>
   <section class="panel" id="p-seasons" role="tabpanel" aria-labelledby="t-seasons" hidden></section>
   <section class="panel" id="p-h2h" role="tabpanel" aria-labelledby="t-h2h" hidden></section>
   <section class="panel" id="p-records" role="tabpanel" aria-labelledby="t-records" hidden></section>
-  <section class="panel" id="p-belt" role="tabpanel" aria-labelledby="t-belt" hidden></section>
 </main>
 <footer class="wrap">
   <p id="foot-src">Every number from ESPN.</p>
@@ -363,6 +420,23 @@ footer p { margin: 0 0 4px; }
 </footer>
 <div id="tip" role="tooltip" hidden></div>
 
+<script>
+function variantChrome(M) {
+  if (M.inProgress) { const p = document.getElementById('live-pill'); p.textContent = `Week ${M.currentWeek}`; p.hidden = false; }
+  const bans = M.years.slice().reverse().map(y => {
+    const ci = M.champInfo[y];
+    if (ci) {
+      const p = ci.champ.key.split(/\s+/); const first = p.shift();
+      return `<li class="hang"><div class="ban" data-tip="<b>${y} champion</b><br>${esc(ci.champ.key)}<br>${esc(ci.champ.team)}"><span class="ban-y">${y}</span>${CUP}<span class="ban-n">${esc(first)}<br>${esc(p.join(' '))}</span><span class="ban-t">Champions</span></div></li>`;
+    }
+    if (y === M.currentYear && M.inProgress) return `<li class="hang"><div class="ban open"><span class="ban-y">${y}</span><span class="ban-n">Week ${M.currentWeek}</span><span class="ban-t">In play</span></div></li>`;
+    return '';
+  }).join('');
+  const r = document.getElementById('rafters');
+  r.innerHTML = `<div class="beam" aria-hidden="true"></div><ol class="banners" id="banners" tabindex="0" role="region" aria-label="Championship banners, newest first. Scroll sideways for more.">${bans}</ol>`;
+  r.hidden = false;
+}
+</script>
 <script>
 const CONFIG = { sheetId: "11kxGx8icTclryc_Im-rzlECyySYh45vMqEvosi36Etg", // Google Sheet id; when set, data is fetched live from the sheet's gviz endpoint
                  localData: false };  // true = read ./data CSVs first. The CSVs are also the automatic fallback when the live Sheet does not answer.
@@ -447,38 +521,6 @@ function shortName(full) {
   return `${p[0]} ${p[p.length - 1][0]}.`;
 }
 
-/* The lineal belt. The first season's champion takes it after that final. Any game the
-   holder loses (playoffs and consolation included) passes it to the winner; a tie keeps it.
-   If the holder is not in the next season, the belt is vacant that season and that
-   season's champion takes it after the final. */
-function computeBelt(games, champs) {
-  const byYear = new Map();
-  for (const g of games) { if (!byYear.has(g.year)) byYear.set(g.year, []); byYear.get(g.year).push(g); }
-  const years = [...byYear.keys()].sort((a, b) => a - b);
-  const reigns = []; let cur = null; let vacantYear = null;
-  years.forEach((y, idx) => {
-    const gs = byYear.get(y);
-    const lastWeek = Math.max(...gs.map(g => g.week));
-    const crown = () => champs[y] ? { holder: champs[y], startYear: y, startWeek: lastWeek, how: 'champ', from: null, defenses: 0, ties: 0, end: null } : null;
-    if (idx === 0) { cur = crown(); return; }
-    if (cur && !gs.some(g => g.m === cur.holder)) {
-      cur.end = { how: 'left', year: years[idx - 1] }; reigns.push(cur); cur = null;
-    }
-    if (!cur) { cur = crown(); if (!cur) vacantYear = y; return; }
-    const weeks = [...new Set(gs.map(g => g.week))].sort((a, b) => a - b);
-    for (const w of weeks) {
-      const g = gs.find(x => x.week === w && x.m === cur.holder);
-      if (!g) continue;
-      if (g.res === 'L') {
-        cur.end = { how: 'lost', year: y, week: w, to: g.opp, score: `${fmtPts(g.oppPts)} to ${fmtPts(g.pts)}` };
-        reigns.push(cur);
-        cur = { holder: g.opp, startYear: y, startWeek: w, how: 'won', from: g.m, score: `${fmtPts(g.oppPts)} to ${fmtPts(g.pts)}`, defenses: 0, ties: 0, end: null };
-      } else { cur.defenses++; if (g.res === 'T') cur.ties++; }
-    }
-  });
-  if (cur) reigns.push(cur);
-  return { current: cur, reigns, vacantYear: cur ? null : vacantYear };
-}
 /* PURE:END */
 
 /* ---------------- data load ---------------- */
@@ -566,7 +608,7 @@ function buildModel(raw) {
       best: num(r.best_finish), w, l, t, pct: winPct(w, l, t), poW: num(r.po_w) || 0, poL: num(r.po_l) || 0,
       pf: num(r.tot_pf), pa: num(r.tot_pa), ppg: num(r.ppg), papg: num(r.papg), luck: num(r.luck),
       allplay: num(r.allplay_pct), highWeek: num(r.high_week), highWeekYear: num(r.high_week_year), highWeekNo: num(r.high_week_no),
-      winStreak: num(r.win_streak), lossStreak: num(r.loss_streak), list
+      winStreak: num(r.win_streak), lossStreak: num(r.loss_streak), mpa: num(r.most_points_awards) || 0, list
     };
   }).filter(m => m.name);
   /* One-season managers (eligible = 0) never appear in rankings, lists, pickers or career tables. */
@@ -579,21 +621,17 @@ function buildModel(raw) {
 
   const records = raw.data_records.map(r => ({ record: String(r.record || '').trim(), who: String(r.who || '').trim(), when: String(r.when || '').trim(), value: String(r.value == null ? '' : r.value).trim() })).filter(r => r.record);
 
-  const belt = computeBelt(games, champs);
-  if (meta.belt_holder && belt.current && meta.belt_holder !== belt.current.holder) console.warn('Belt holder differs from the sheet:', meta.belt_holder, belt.current.holder);
-
   const mByName = new Map(allManagers.map(m => [m.name, m]));
   const curSeason = seasons.filter(s => s.year === currentYear);
   const inProgress = curSeason.length > 0 && curSeason.some(s => !s.complete);
   const qualified = managers;  /* ranks cover every eligible manager, same as the Sheet */
-  return { meta, seasons, games, managers, mByName, h2h, records, belt, years, firstYear, currentYear, currentWeek, champs, champInfo, inProgress, qualified, league: meta.league || 'Zeta Zeta' };
+  return { meta, seasons, games, managers, mByName, h2h, records, years, firstYear, currentYear, currentWeek, champs, champInfo, inProgress, qualified, league: meta.league || 'Zeta Zeta' };
 }
 
 /* ---------------- helpers ---------------- */
 const $ = (s, r = document) => r.querySelector(s);
 const esc = s => String(s == null ? '' : s).replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
 const CUP = '<svg class="cup" viewBox="0 0 20 20" aria-hidden="true"><path fill="currentColor" d="M5 2h10v2h3v2.5a4 4 0 0 1-3.6 4A5 5 0 0 1 11 13.9V16h3v2H6v-2h3v-2.1a5 5 0 0 1-3.4-3.4A4 4 0 0 1 2 6.5V4h3V2zm0 4H4v.5a2 2 0 0 0 1 1.7V6zm10 0v2.2a2 2 0 0 0 1-1.7V6h-1z"/></svg>';
-const BELT = '<svg class="belt-icon" viewBox="0 0 64 30" aria-hidden="true"><rect x="0" y="9" width="64" height="12" rx="3" fill="currentColor" opacity=".55"/><ellipse cx="32" cy="15" rx="15" ry="13" fill="currentColor"/><ellipse cx="32" cy="15" rx="10" ry="8.5" fill="none" stroke="var(--surface)" stroke-width="2"/><text x="32" y="19.5" text-anchor="middle" font-family="Barlow Condensed, Arial Narrow, sans-serif" font-weight="700" font-size="12" fill="var(--surface)">ZZ</text></svg>';
 
 function rankMap(list, get, dir) {
   const vals = list.map(m => ({ n: m.name, v: get(m) })).filter(x => x.v != null && Number.isFinite(x.v));
@@ -646,8 +684,8 @@ window.addEventListener('scroll', hideTip, { passive: true, capture: true });
 window.addEventListener('resize', hideTip);
 
 /* ---------------- tabs and routing ---------------- */
-const TABS = ['home', 'managers', 'seasons', 'h2h', 'records', 'belt'];
-const RENDER = { home: renderHome, managers: renderManagers, seasons: renderSeasons, h2h: renderH2H, records: renderRecords, belt: renderBelt };
+const TABS = ['home', 'managers', 'seasons', 'h2h', 'records'];
+const RENDER = { home: renderHome, managers: renderManagers, seasons: renderSeasons, h2h: renderH2H, records: renderRecords };
 const rendered = {};
 function show(id) {
   if (!TABS.includes(id)) id = 'home';
@@ -655,6 +693,7 @@ function show(id) {
     const btn = $('#t-' + t), p = $('#p-' + t), on = t === id;
     btn.setAttribute('aria-selected', String(on)); btn.tabIndex = on ? 0 : -1; p.hidden = !on;
   });
+  document.body.dataset.tab = id;
   if (M && !rendered[id]) { try { RENDER[id]($('#p-' + id)); rendered[id] = true; } catch (err) { console.error(err); window.__errors.push(String(err && err.stack || err)); $('#p-' + id).innerHTML = `<div class="state err">This tab could not be drawn: ${esc(err.message)}</div>`; } }
   const btn = $('#t-' + id); const bar = btn.parentElement;
   const bl = btn.offsetLeft, br = bl + btn.offsetWidth;
@@ -692,14 +731,16 @@ function renderHome(el) {
   const cur = M.seasons.filter(s => s.year === M.currentYear);
   const lead = cur.slice().sort((a, b) => (a.seed ?? 99) - (b.seed ?? 99))[0];
   const most = cur.slice().sort((a, b) => (b.pf ?? 0) - (a.pf ?? 0))[0];
-  const b = M.belt.current;
+  const tMpa = leaders(ms, m => m.mpa);
+  const mpaYears = m => M.years.filter(y => { const ys = M.seasons.filter(s => s.year === y && s.complete && s.pf != null); return ys.length && ys.reduce((a, s) => s.pf > a.pf ? s : a).key === m.name; });
+  const mpaNote = () => { if (tMpa.ms.length !== 1) return tMpa.ms.length ? 'Tied' : ''; const ys = mpaYears(tMpa.ms[0]); return ys.length === tMpa.v ? ys.join(', ') : 'Regular-season points titles'; };
   const names = arr => arr.map(m => esc(m.name)).join(', ');
-  const tile = (cls, label, val, who, note) => `<div class="card tile ${cls}"><div class="lbl">${label}</div><div class="val">${val}</div><div class="who">${who}</div>${note ? `<div class="note">${note}</div>` : ''}</div>`;
+  const tile = (cls, label, val, who, note) => `<div class="card tile ${cls}" data-k="${label}"><div class="lbl">${label}</div><div class="val">${val}</div><div class="who">${who}</div>${note ? `<div class="note">${note}</div>` : ''}</div>`;
   const tiles = [
     tile('', 'Most titles', tTitles.v ?? '', names(tTitles.ms), tTitles.ms.length > 1 ? 'Tied' : (tTitles.ms[0] ? tTitles.ms[0].titleYears.join(', ') : '')),
     tile('', 'Best win %', fmtPctVal(tPct.v), names(tPct.ms), 'Regular season'),
     tile('', 'Most points all-time', fmtPts(tPf.v), names(tPf.ms), 'Playoffs included'),
-    tile('belt', 'Has the Belt', b ? esc(b.holder) : 'Vacant', b ? `Since ${beltStart(b)}` : 'Nobody yet', b && b.from ? `Took it from ${esc(b.from)}` : ''),
+    tile('', 'Most points awards', tMpa.v ?? '', names(tMpa.ms), mpaNote()),
     M.inProgress && lead ? tile('ip', `${M.currentYear} leader`, fmtRec(lead.w, lead.l, lead.t), esc(lead.key), esc(lead.team)) : '',
     M.inProgress && most ? tile('ip', `${M.currentYear} most points`, fmtPts(most.pf), esc(most.key), `Through Week ${M.currentWeek}`) : ''
   ].join('');
@@ -722,7 +763,6 @@ function renderHome(el) {
     <div class="col"><div><h2 class="sec">Champions</h2><p class="sub">Newest first.</p></div><div class="card"><ol class="champs">${rows}</ol></div></div>
   </div>`;
 }
-function beltStart(r) { return r.how === 'champ' ? `the ${r.startYear} final` : `${r.startYear} Week ${r.startWeek}`; }
 
 /* ---------------- managers ---------------- */
 const SORTS = {
@@ -784,7 +824,7 @@ function mgrCard(m) {
   const qual = m.eligible;
   const stats = STATS.map((s, i) => { const r = qual ? rk[i].get(m.name) : null; return `<div class="st"><div class="k">${s.k}</div><div class="v">${s.f(m)}${r ? `<span class="rk">#${r}</span>` : ''}</div></div>`; }).join('');
   const tr = m.titles ? `<span class="trophies" title="${m.titles} titles">${CUP}${m.titles}</span>` : `<span class="trophies zero">No titles</span>`;
-  const span = m.first === m.last ? `${m.first}` : `${m.first} to ${m.last}`;
+  const span = m.first === m.last ? `${m.first}` : `${m.first}-${m.last}`;
   return `<article class="card mc ${m.active ? '' : 'former'}" data-m="${esc(m.name)}">
     <div class="mhead"><div><h3 class="mname">${esc(m.name)}</h3><div class="myrs">${span}, ${m.seasons} ${m.seasons === 1 ? 'season' : 'seasons'}${m.active ? '' : ', former'}</div>
     ${m.titles ? `<div class="mtitles">Titles: ${m.titleYears.join(', ')}</div>` : ''}</div>${tr}</div>
@@ -827,7 +867,7 @@ function drawManagerTable(host) {
   const rk = ranks();
   const cell = (i, m) => { const r = m.eligible ? rk[i].get(m.name) : null; return `${STATS[i].f(m)}${r ? `<span class="rk">#${r}</span>` : ''}`; };
   const cols = [
-    { k: 'name', label: 'Manager', cls: 'l stick', v: m => (m.active ? '0' : '1') + m.name.toLowerCase(), f: m => `<span class="nm">${esc(m.name)}</span><span class="tm">${m.first === m.last ? m.first : `${m.first} to ${m.last}`}${m.active ? '' : ', former'}</span>`, dir: 'asc' },
+    { k: 'name', label: 'Manager', cls: 'l stick', v: m => (m.active ? '0' : '1') + m.name.toLowerCase(), f: m => `<span class="nm">${esc(m.name)}</span><span class="tm">${m.first === m.last ? m.first : `${m.first}-${m.last}`}${m.active ? '' : ', former'}</span>`, dir: 'asc' },
     { k: 'seasons', label: 'Yrs', v: m => m.seasons, f: m => cell(0, m) },
     { k: 'titles', label: 'Titles', v: m => m.titles * 100 + m.runnerUps, f: m => m.titles ? `${CUP} ${cell(1, m)}` : cell(1, m) },
     { k: 'ru', label: '2nd', v: m => m.runnerUps, f: m => cell(2, m) },
@@ -877,7 +917,7 @@ function drawSeason(el) {
   const leastPf = pick(ss.filter(s => s.pf != null), s => s.pf, -1);
   const lucky = pick(ss.filter(s => s.luck != null), s => s.luck, 1);
   const unlucky = pick(ss.filter(s => s.luck != null), s => s.luck, -1);
-  const co = (label, val, who, note) => `<div class="card callout"><div class="lbl">${label}</div><div class="val">${val}</div><div class="who">${who}</div>${note ? `<div class="note">${note}</div>` : ''}</div>`;
+  const co = (label, val, who, note) => `<div class="card callout" data-k="${label}"><div class="lbl">${label}</div><div class="val">${val}</div><div class="who">${who}</div>${note ? `<div class="note">${note}</div>` : ''}</div>`;
   const gm = g => `Week ${g.week}${g.stage && g.stage !== 'Reg' ? `, ${g.stage === 'Playoffs' ? 'playoffs' : 'consolation'}` : ''}`;
   const callouts = [
     mostPf ? co('Most points', fmtPts(mostPf.pf), esc(mostPf.key), 'Regular season') : '',
@@ -937,8 +977,8 @@ function drawSeason(el) {
       <div class="col"><div><h3 class="sub-h">Season Callouts</h3><div class="callouts">${callouts}</div></div></div>
     </div>
     <div><h3 class="sub-h">Playoffs</h3>${mu ? `<div class="games">${mu}</div>` : `<div class="card empty">No playoff games yet. The bracket starts after the regular season.</div>`}</div>
-    <div><h3 class="sub-h">Weekly Scores</h3><div class="card"><div class="heat-wrap"><div class="heat" style="grid-template-columns:${colsDef}" role="img" aria-label="Weekly scores for ${y}, darker is higher">${hdr}${heatRows}</div></div>
-      <div class="controls" style="margin-top:10px"><span class="ramp">${fmtPts(mn)} <i></i> ${fmtPts(mx)}</span><span class="legend" style="margin:0">Darker = more points. ${poW.length ? 'Gold weeks are playoffs and consolation. ' : ''}Tap a square for the score.</span></div></div></div>`;
+    <div><h3 class="sub-h">Weekly Scores</h3><div class="card"><div class="heat-wrap"><div class="heat" style="grid-template-columns:${colsDef}" role="img" aria-label="Weekly scores for ${y}, stronger color is higher">${hdr}${heatRows}</div></div>
+      <div class="controls" style="margin-top:10px"><span class="ramp">${fmtPts(mn)} <i></i> ${fmtPts(mx)}</span><span class="legend" style="margin:0">Stronger color = more points. ${poW.length ? 'Gold weeks are playoffs and consolation. ' : ''}Tap a square for the score.</span></div></div></div>`;
   const cols = [
     { k: 'name', label: 'Manager', cls: 'l stick', v: s => s.key.toLowerCase(), f: s => `<span class="nm">${s.complete && s.finish === 1 ? CUP + ' ' : ''}${esc(s.key)}</span><span class="tm">${esc(s.team)}</span>`, dir: 'asc' },
     complete ? { k: 'fin', label: 'Fin', v: s => s.finish, f: s => `<span class="num-strong">${ord(s.finish)}</span>`, dir: 'asc' } : null,
@@ -983,7 +1023,7 @@ function drawH2H(el) {
   const pool = rows.filter(r => r.g >= 6).length ? rows.filter(r => r.g >= 6) : rows;
   const owns = pool.slice().sort((a, b) => b.pct - a.pct || b.g - a.g)[0];
   const ownedBy = pool.slice().sort((a, b) => a.pct - b.pct || b.g - a.g)[0];
-  const tile = (label, val, who, note) => `<div class="card tile"><div class="lbl">${label}</div><div class="val">${val}</div><div class="who">${who}</div>${note ? `<div class="note">${note}</div>` : ''}</div>`;
+  const tile = (label, val, who, note) => `<div class="card tile" data-k="${label}"><div class="lbl">${label}</div><div class="val">${val}</div><div class="who">${who}</div>${note ? `<div class="note">${note}</div>` : ''}</div>`;
   const tiles = `<div class="tiles h2h-tiles">${tile('All games', fmtRec(tot.w, tot.l, tot.t), fmtPctVal(winPct(tot.w, tot.l, tot.t)) + ' win %', `Playoffs ${fmtRec(tot.pw, tot.pl)}`)}
     ${owns ? tile('Owns', fmtRec(owns.w, owns.l, owns.t), esc(owns.o), `Best record vs (${fmtPctVal(owns.pct)})`) : ''}
     ${ownedBy ? tile('Owned by', fmtRec(ownedBy.w, ownedBy.l, ownedBy.t), esc(ownedBy.o), `Worst record vs (${fmtPctVal(ownedBy.pct)})`) : ''}</div>`;
@@ -1050,43 +1090,11 @@ function renderRecords(el) {
     <p class="legend">Luck is win % minus all-play win % (the record you would have playing every team every week).</p>`;
 }
 
-/* ---------------- belt ---------------- */
-function renderBelt(el) {
-  const B = M.belt, cur = B.current;
-  const reigns = B.reigns;
-  const elig = n => (M.mByName.get(n) || {}).eligible !== false;
-  const endTxt = r => r.end == null ? 'now' : r.end.how === 'left' ? `left after ${r.end.year}` : `${r.end.year} Week ${r.end.week}`;
-  const startTxt = r => r.how === 'champ' ? `${r.startYear} final` : `${r.startYear} Week ${r.startWeek}`;
-  const longest = reigns.filter(r => elig(r.holder)).sort((a, b) => b.defenses - a.defenses || a.startYear - b.startYear).slice(0, 10);
-  const byM = new Map();
-  reigns.filter(r => elig(r.holder)).forEach(r => { const x = byM.get(r.holder) || { n: r.holder, d: 0, r: 0 }; x.d += r.defenses; x.r += 1; byM.set(r.holder, x); });
-  const bars = [...byM.values()].sort((a, b) => b.d - a.d || b.r - a.r);
-  const maxD = Math.max(1, ...bars.map(b => b.d));
-  const recent = reigns.filter(r => r.how === 'won' || r.how === 'champ').slice(-8).reverse();
-  const hero = cur ? `<div class="card belt-hero">${BELT}<div><div class="lbl">Current holder</div><div class="holder">${esc(cur.holder)}</div>
-      <div class="facts" style="margin-top:12px">
-        <div class="fact"><div class="lbl">Since</div><div class="v">${startTxt(cur)}</div></div>
-        <div class="fact"><div class="lbl">Games held</div><div class="v">${cur.defenses}</div></div>
-        <div class="fact"><div class="lbl">Took it from</div><div class="v">${cur.from ? esc(cur.from) : 'Won the title'}</div></div>
-      </div>${cur.score ? `<div class="note muted" style="margin-top:6px;font-size:13px">Won it ${cur.score}.</div>` : ''}</div></div>`
-    : `<div class="card belt-hero">${BELT}<div><div class="lbl">Current holder</div><div class="holder">Vacant</div><div class="sub">The ${B.vacantYear || M.currentYear} champion takes it after the final.</div></div></div>`;
-  el.innerHTML = `<div><h2 class="sec">The Belt</h2><p class="sub">A lineal title that changes hands every time the holder loses.</p></div>
-    ${hero}
-    <p class="legend" style="margin-top:-8px">How it works: the ${M.firstYear} champion took the belt after the ${M.firstYear} final. Any game the holder loses, playoffs and consolation included, passes it to the winner. A tie keeps it. If the holder sits out a season, that season's champion takes it after the final. ${reigns.length} reigns so far.</p>
-    <div class="belt-grid">
-      <div><h3 class="sub-h">Longest Reigns</h3><div class="card"><ol class="rlist"><li class="hd" aria-hidden="true"><span></span><span>Holder</span><span style="text-align:right">Games held</span></li>${longest.map((r, i) => `<li><span class="i">${i + 1}</span><span class="n">${esc(r.holder)}${r.end == null ? ' <span class="muted">(current)</span>' : ''}</span><span class="c">${r.defenses}</span><span class="d">${startTxt(r)} to ${endTxt(r)}${r.end && r.end.how === 'lost' ? `, lost to ${esc(r.end.to)}` : ''}</span></li>`).join('')}</ol></div></div>
-      <div class="col">
-        <div><h3 class="sub-h">Games Held by Manager</h3><div class="card"><div class="bars">${bars.map(b => `<div class="bar"><span class="bn">${esc(shortName(b.n))}</span><div class="track"><div class="fill" style="width:${(b.d / maxD * 100).toFixed(1)}%"></div></div><span class="bv">${b.d} <small>in ${b.r} ${b.r === 1 ? 'reign' : 'reigns'}</small></span></div>`).join('')}</div></div></div>
-        <div><h3 class="sub-h">Latest Changes</h3><div class="card"><ol class="rlist plain">${recent.map(r => `<li><span class="n">${esc(r.holder)}</span><span class="c" style="font-size:15px">${startTxt(r)}</span><span class="d">${r.how === 'champ' ? 'Took it as champion' : `Beat ${esc(r.from)} ${r.score}`}</span></li>`).join('')}</ol></div></div>
-      </div>
-    </div>`;
-}
-
 /* ---------------- boot ---------------- */
 function paintChrome() {
   document.title = `${M.league} History`;
   $('#league-name').textContent = M.league;
-  $('#league-span').textContent = `${M.firstYear} to ${M.currentYear}`;
+  $('#league-span').textContent = `${M.firstYear}-${M.currentYear}`;
   const upd = M.meta.updated ? `Updated ${M.meta.updated}` : '';
   const thru = M.inProgress ? `${M.currentYear} through Week ${M.currentWeek}` : `${M.currentYear} season final`;
   $('#league-upd').textContent = [upd, thru].filter(Boolean).join(', ');
@@ -1103,6 +1111,7 @@ async function boot() {
     M = buildModel(raw);
     window.__model = M;
     paintChrome();
+    if (typeof variantChrome === 'function') variantChrome(M);
     $('#state').hidden = true;
     show(location.hash.slice(1) || 'home');
     window.__readyAt = Math.round(performance.now());
