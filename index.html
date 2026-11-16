@@ -844,7 +844,7 @@ function renderHome(el) {
   const tiles = [
     tile('', 'Most titles', tTitles.v ?? '', names(tTitles.ms), tTitles.ms.length > 1 ? 'Tied' : (tTitles.ms[0] ? tTitles.ms[0].titleYears.join(', ') : '')),
     tile('', 'Best win %', fmtPctVal(tPct.v), names(tPct.ms), 'Regular season'),
-    tile('', 'Most points all-time', fmtPts(tPf.v), names(tPf.ms), (() => { const o = ms.filter(m => m.pf != null && !tPf.ms.includes(m)).sort((a, b) => b.pf - a.pf)[0]; return (o ? `<span class="runner">#2 ${esc(o.name)}, ${fmtPts(o.pf)}</span> · ` : '') + 'playoffs included'; })()),
+    tile('', 'Most points all-time', fmtPts(tPf.v), names(tPf.ms), (() => { const o = ms.filter(m => m.pf != null && !tPf.ms.includes(m)).sort((a, b) => b.pf - a.pf)[0]; return 'Playoffs included' + (o ? `<span class="runner">#2 ${esc(o.name)}, ${fmtPts(o.pf)}</span>` : ''); })()),
     tile('', 'Most points awards', tMpa.v ?? '', names(tMpa.ms), mpaNote()),
     M.inProgress && lead ? tile('ip', `${M.currentYear} leader`, fmtRec(lead.w, lead.l, lead.t), esc(lead.key), esc(lead.team)) : '',
     M.inProgress && most ? tile('ip', `${M.currentYear} most points`, fmtPts(most.pf), esc(most.key), `Through Week ${M.currentWeek}`) : ''
