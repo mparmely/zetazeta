@@ -398,7 +398,8 @@ body:not([data-tab="home"]) .rafters { display: none; }
 .tw-side.win .tw-p { color: var(--ink); }
 .tw-x { align-self: center; font: 900 14px/1 var(--font-display); text-transform: uppercase; letter-spacing: .08em; color: var(--on-accent); background: var(--accent); padding: 5px 7px 4px; transform: skewX(-12deg); }
 .tw-meta { display: grid; gap: 4px; padding: 8px 12px 10px; background: var(--surface-2); border-top: 1px solid var(--line); border-radius: 0 0 4px 4px; font-size: 12.5px; line-height: 1.35; color: var(--ink-2); }
-.tw-meta b { display: inline-block; min-width: 4.4em; font: 600 10.5px/1 var(--font-body); letter-spacing: .12em; text-transform: uppercase; color: var(--ink-3); }
+.tw-meta b { display: inline-block; min-width: 4.4em; font: 600 10.5px/1 var(--font-body); letter-spacing: .12em; text-transform: uppercase; color: var(--accent-ink); }
+.tw-meta strong { color: var(--ink); font-weight: 700; }
 /* the never club and droughts */
 .nc { display: grid; }
 .nc-row { display: grid; gap: 8px; padding: 12px 0; border-top: 1px solid var(--line); }
@@ -1219,14 +1220,14 @@ const minBy = (arr, f) => arr.reduce((x, g) => !x || f(g) < f(x) ? g : x, null);
 function seriesTxt(a, b) {
   const r = M.h2h.find(x => x.m === a && x.o === b);
   if (!r || !(r.w + r.l + r.t)) return 'First meeting';
-  if (r.w === r.l) return `Tied ${fmtRec(r.w, r.l, r.t)}`;
-  return `${esc(nick(r.w > r.l ? a : b))} leads ${fmtRec(Math.max(r.w, r.l), Math.min(r.w, r.l), r.t)}`;
+  if (r.w === r.l) return `<strong>Tied ${fmtRec(r.w, r.l, r.t)}</strong>`;
+  return `<strong>${esc(nick(r.w > r.l ? a : b))} leads ${fmtRec(Math.max(r.w, r.l), Math.min(r.w, r.l), r.t)}</strong>`;
 }
 function meetTxt(g) {
   if (!g) return 'No meetings yet';
   if (g.res === 'T') return `${wkTxt(g)}, tied at ${fmtPts(g.pts)}`;
   const won = g.res === 'W';
-  return `${wkTxt(g)}, ${esc(nick(won ? g.m : g.opp))} won ${fmtPts(won ? g.pts : g.oppPts)} to ${fmtPts(won ? g.oppPts : g.pts)}`;
+  return `${wkTxt(g)}, <strong>${esc(nick(won ? g.m : g.opp))} won ${fmtPts(won ? g.pts : g.oppPts)} to ${fmtPts(won ? g.oppPts : g.pts)}</strong>`;
 }
 
 /* This Week: the lowest unplayed week in data_schedule; in the offseason, the latest week's results. */
