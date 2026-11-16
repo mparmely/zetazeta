@@ -939,7 +939,7 @@ function mgrCard(m) {
   </article>`;
 }
 function renderManagers(el) {
-  if (!state.mview) { let v = null; try { v = localStorage.getItem('zz-mview'); } catch (e) {} state.mview = v || (window.innerWidth >= 1000 ? 'table' : 'cards'); }
+  if (!state.mview) { let v = null; try { v = localStorage.getItem('zz-mview'); } catch (e) {} state.mview = v || 'cards';  // cards by default on every screen (Matt 11/16/26); the Table switch stays }
   el.innerHTML = `<div class="sec-head"><div><h2 class="sec">Managers</h2><p class="sub" id="m-sub"></p></div>
     <div class="seg" role="group" aria-label="View"><button type="button" data-view="cards">Cards</button><button type="button" data-view="table">Table</button></div></div>
     <div class="controls" id="m-sortbar"><div class="ctl-group" role="group" aria-label="Sort by"><span class="lbl">Sort</span>${Object.entries(SORTS).map(([k, s]) => `<button type="button" class="chip" data-sort="${k}">${s.label}</button>`).join('')}</div></div>
