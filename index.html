@@ -520,7 +520,7 @@ function variantChrome(M) {
     const ci = M.champInfo[y];
     if (ci) {
       const p = ci.champ.key.split(/\s+/); const first = p.shift();
-      return `<li class="hang"><div class="ban" data-tip="<b>${y} champion</b><br>${esc(ci.champ.key)}<br>${esc(ci.champ.team)}"><span class="ban-y">${y}</span>${CUP}<span class="ban-n">${esc(first)}<br>${esc(p.join(' '))}</span><span class="ban-t">Champions</span></div></li>`;
+      return `<li class="hang"><div class="ban" data-tip="<b>${y} champion</b><br>${esc(ci.champ.key)}<br>${esc(ci.champ.team)}"><span class="ban-y">${y}</span>${CUP}<span class="ban-n">${esc(first)}<br>${esc(p.join(' '))}</span></div></li>`;
     }
     if (y === M.currentYear && M.inProgress) return `<li class="hang"><div class="ban open"><span class="ban-y">${y}</span><span class="ban-n">Week ${M.currentWeek}</span><span class="ban-t">In play</span></div></li>`;
     return '';
