@@ -1228,7 +1228,7 @@ function luckRankingsHtml() {
   const row = (s, i) => `<li><span class="i">${i + 1}</span><span class="n">${esc(s.key)}</span><span class="c">${fmtLuck(s.luck)}</span><span class="d">${s.year}: ${fmtRec(s.w, s.l, s.t)}, all-play ${fmtPctVal(s.allplay)}${s.finish ? `, finished ${ord(s.finish)}` : ''}</span></li>`;
   const lucky = ss.slice().sort((a, b) => b.luck - a.luck).slice(0, 5).map(row).join('');
   const unlucky = ss.slice().sort((a, b) => a.luck - b.luck).slice(0, 5).map(row).join('');
-  return `<div><h3 class="sub-h">Luck Rankings</h3><div class="luck-grid">
+  return `<div><h3 class="sub-h">Luck Rankings</h3><p class="sub" style="margin:0 0 12px">Luck is your real win % minus your all-play win %. All-play is the record you would have if you played every team every week, so it shows what your scores earned. Plus means you won more than your scores deserved, minus means fewer. Regular season only.</p><div class="luck-grid">
     <div class="card"><div class="lbl" style="margin-bottom:8px">Career, Luckiest to Unluckiest</div><ol class="rlist">${carRows}</ol></div>
     <div class="col"><div class="card"><div class="lbl" style="margin-bottom:8px">Luckiest Seasons</div><ol class="rlist">${lucky}</ol></div>
     <div class="card"><div class="lbl" style="margin-bottom:8px">Unluckiest Seasons</div><ol class="rlist">${unlucky}</ol></div></div>
