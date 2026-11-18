@@ -1212,8 +1212,8 @@ function renderRecords(el) {
     return `<div class="card rec"><div class="lbl">${esc(r.record)}</div><div class="val">${recValue(r.record, r.value)}</div><div class="who">${esc(who)}</div>${team ? `<div class="tmn">${esc(team)}</div>` : ''}<div class="when">${esc(when)}${extra}</div></div>`;
   };
   el.innerHTML = `<div><h2 class="sec">Record Book</h2><p class="sub">The league's all-time bests and worsts, 2013 to now.</p></div>
-    <div class="rec-groups">${ORDER.filter(g => groups.get(g).length).map(g => `<div><h3 class="sub-h">${g}</h3><div class="recs">${groups.get(g).map(card).join('')}</div></div>`).join('')}</div>
     ${luckRankingsHtml()}
+    <div class="rec-groups">${ORDER.filter(g => groups.get(g).length).map(g => `<div><h3 class="sub-h">${g}</h3><div class="recs">${groups.get(g).map(card).join('')}</div></div>`).join('')}</div>
     ${badBeatsHtml()}
     <p class="legend">Luck is win % minus all-play win % (the record you would have playing every team every week).</p>`;
 }
