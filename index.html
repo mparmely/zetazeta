@@ -266,6 +266,17 @@ select.sel { appearance: none; -webkit-appearance: none; font: 600 18px/1.2 var(
 .mx td.self { background: var(--surface-2); }
 .mx th button { text-align: center; cursor: default; }
 
+/* luck rankings (Matt 11/18/26) */
+.luck-grid { display: grid; gap: 14px; }
+@media (min-width: 900px) { .luck-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); align-items: start; } }
+.rlist { list-style: none; margin: 0; padding: 0; }
+.rlist li { display: grid; grid-template-columns: 26px minmax(0, 1fr) auto; gap: 2px 10px; padding: 9px 0; border-top: 1px solid var(--line); align-items: baseline; }
+.rlist li:first-child { border-top: 0; padding-top: 2px; }
+.rlist .i { font: 700 16px var(--font-display); color: var(--ink-3); }
+.rlist .n { font-weight: 600; }
+.rlist .n small { font-weight: 500; font-size: 12px; }
+.rlist .d { font-size: 12.5px; color: var(--ink-3); grid-column: 2 / 3; }
+.rlist .c { font: 600 20px/1 var(--font-display); font-variant-numeric: tabular-nums; text-align: right; grid-row: 1; grid-column: 3; }
 /* records */
 .rec-groups { display: grid; gap: 24px; }
 .recs { display: grid; gap: 10px; }
@@ -1091,6 +1102,8 @@ function drawSeason(el) {
     <div><h3 class="sub-h">Playoffs</h3>${mu ? `<div class="games">${mu}</div>` : `<div class="card empty">No playoff games yet. The bracket starts after the regular season.</div>`}</div>
     <div><h3 class="sub-h">Weekly Scores</h3><div class="card"><div class="heat-wrap"><div class="heat" style="grid-template-columns:${colsDef}" role="img" aria-label="Weekly scores for ${y}, stronger color is higher">${hdr}${heatRows}</div></div>
       <div class="controls" style="margin-top:10px"><span class="ramp">${fmtPts(mn)} <i></i> ${fmtPts(mx)}</span><span class="legend" style="margin:0">Stronger color = more points. ${poW.length ? 'Gold weeks are playoffs and consolation. ' : ''}Tap a square for the score.</span></div></div></div>`;
+  /* Luck rank within the season, #1 = luckiest (Matt 11/18/26). Ties share a rank. */
+  const luckRk = new Map(); { let prev = null, r = 0; ss.filter(x => x.luck != null).slice().sort((a, b) => b.luck - a.luck).forEach((x, i) => { if (x.luck !== prev) { r = i + 1; prev = x.luck; } luckRk.set(x.key, r); }); }
   const cols = [
     { k: 'name', label: 'Manager', cls: 'l stick', v: s => s.key.toLowerCase(), f: s => `<span class="nm">${s.complete && s.finish === 1 ? CUP + ' ' : ''}${esc(s.key)}</span><span class="tm">${esc(s.team)}</span>`, dir: 'asc' },
     complete ? { k: 'fin', label: 'Fin', v: s => s.finish, f: s => `<span class="num-strong">${ord(s.finish)}</span>`, dir: 'asc' } : null,
@@ -1098,7 +1111,7 @@ function drawSeason(el) {
     { k: 'pf', label: 'PF', v: s => s.pf, f: s => fmtPts(s.pf) },
     { k: 'pa', label: 'PA', v: s => s.pa, f: s => fmtPts(s.pa) },
     { k: 'seed', label: complete ? 'Seed' : 'Rank', v: s => s.seed, f: s => s.seed == null ? '' : complete ? s.seed : `<span class="num-strong">${ord(s.seed)}</span>`, dir: 'asc' },
-    { k: 'luck', label: 'Luck', v: s => s.luck, f: s => fmtLuck(s.luck) }
+    { k: 'luck', label: 'Luck', v: s => s.luck, f: s => `${fmtLuck(s.luck)}${luckRk.get(s.key) ? `<span class="rk">#${luckRk.get(s.key)}</span>` : ''}` }
   ].filter(Boolean);
   sortTable(body.querySelector('#s-table'), cols, ss, { sort: complete ? 'fin' : 'seed', dir: 'asc', rowCls: s => s.complete && s.finish === 1 ? 'champ-row' : '' });
 }
@@ -1200,8 +1213,27 @@ function renderRecords(el) {
   };
   el.innerHTML = `<div><h2 class="sec">Record Book</h2><p class="sub">The league's all-time bests and worsts, 2013 to now.</p></div>
     <div class="rec-groups">${ORDER.filter(g => groups.get(g).length).map(g => `<div><h3 class="sub-h">${g}</h3><div class="recs">${groups.get(g).map(card).join('')}</div></div>`).join('')}</div>
+    ${luckRankingsHtml()}
     ${badBeatsHtml()}
     <p class="legend">Luck is win % minus all-play win % (the record you would have playing every team every week).</p>`;
+}
+
+/* Luck rankings (Matt 11/18/26): every manager ranked luckiest to unluckiest over a career, plus the luckiest and
+   unluckiest single seasons. Luck = win % minus all-play win %. Hidden and one-season managers are left out. */
+function luckRankingsHtml() {
+  const car = M.managers.filter(m => m.luck != null).slice().sort((a, b) => b.luck - a.luck);
+  if (!car.length) return '';
+  const n = car.length;
+  const carRows = car.map((m, i) => `<li><span class="i">${i + 1}</span><span class="n">${esc(m.name)}${i === 0 ? ' <small class="muted">luckiest</small>' : i === n - 1 ? ' <small class="muted">unluckiest</small>' : ''}</span><span class="c">${fmtLuck(m.luck)}</span><span class="d">${fmtRec(m.w, m.l, m.t)}, all-play ${fmtPctVal(m.allplay)}, ${m.seasons} ${m.seasons === 1 ? 'season' : 'seasons'}</span></li>`).join('');
+  const ss = M.seasons.filter(s => s.complete && s.luck != null && isElig(s.key));
+  const row = (s, i) => `<li><span class="i">${i + 1}</span><span class="n">${esc(s.key)}</span><span class="c">${fmtLuck(s.luck)}</span><span class="d">${s.year}: ${fmtRec(s.w, s.l, s.t)}, all-play ${fmtPctVal(s.allplay)}${s.finish ? `, finished ${ord(s.finish)}` : ''}</span></li>`;
+  const lucky = ss.slice().sort((a, b) => b.luck - a.luck).slice(0, 5).map(row).join('');
+  const unlucky = ss.slice().sort((a, b) => a.luck - b.luck).slice(0, 5).map(row).join('');
+  return `<div><h3 class="sub-h">Luck Rankings</h3><div class="luck-grid">
+    <div class="card"><div class="lbl" style="margin-bottom:8px">Career, Luckiest to Unluckiest</div><ol class="rlist">${carRows}</ol></div>
+    <div class="col"><div class="card"><div class="lbl" style="margin-bottom:8px">Luckiest Seasons</div><ol class="rlist">${lucky}</ol></div>
+    <div class="card"><div class="lbl" style="margin-bottom:8px">Unluckiest Seasons</div><ol class="rlist">${unlucky}</ol></div></div>
+  </div></div>`;
 }
 
 /* ---------------- league extras: this week, the never club, rivalries, bad beats, card backs ---------------- */
